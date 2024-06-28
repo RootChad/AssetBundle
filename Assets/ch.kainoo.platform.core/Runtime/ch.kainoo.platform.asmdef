@@ -1,0 +1,17 @@
+{
+    "name": "ch.kainoo.platform",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3083072bebe24764f9e851f496ba6948",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,8 @@
+ManifestFileVersion: 1
+CompatibilityAssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: mynewbundle
+      Hash: 0631f5a26edf26c9a34e30c18be2cd0d
+      CRC: 2346152
+      Dependencies: {}

@@ -1,0 +1,39 @@
+ManifestFileVersion: 0
+CRC: 2550696617
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: texture.hd
+      Dependencies: {}
+    Info_1:
+      Name: texture.sd
+      Dependencies: {}
+    Info_2:
+      Name: object
+      Dependencies:
+        Dependency_0: materialsbundle
+    Info_3:
+      Name: materialsbundle
+      Dependencies:
+        Dependency_0: highmaterial.highquality
+        Dependency_1: mat1.highquality
+    Info_4:
+      Name: objectbundle
+      Dependencies:
+        Dependency_0: materialsbundle
+    Info_5:
+      Name: scenebundle
+      Dependencies:
+        Dependency_0: objectbundle
+    Info_6:
+      Name: highmaterial.highquality
+      Dependencies: {}
+    Info_7:
+      Name: highmaterial.lowquality
+      Dependencies: {}
+    Info_8:
+      Name: mat1.highquality
+      Dependencies: {}
+    Info_9:
+      Name: mat1.lowquality
+      Dependencies: {}

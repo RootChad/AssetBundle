@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 1169458486
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1ad6f2b4970b1651519165fb6d198edd
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 82515b3694a1e5beae009c48c1198c34
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Materials/mat1.mat
+Dependencies:
+- D:/Dev/newASSETBUNDLE/AssetBundle/Assets/BundledAssets/texture.sd

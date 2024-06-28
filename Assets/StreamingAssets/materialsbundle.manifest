@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 1284443456
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e40c8adfa4c2347abc02cb1046bef7c7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 82515b3694a1e5beae009c48c1198c34
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Materials/mat1.mat
+- Assets/Materials/highmaterial.mat
+Dependencies:
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/highmaterial.highquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/mat1.highquality
