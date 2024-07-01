@@ -247,7 +247,47 @@ public class FlexibleAssetBundleAssigner : MonoBehaviour
 
         return lowQualityTexture;
     }
+    private static Texture2D GenerateHighQualityTexture(Texture2D sourceTexture)
+    {
+        if (sourceTexture == null)
+        {
+            Debug.LogError("Source texture is null.");
+            return null;
+        }
 
+        // Set desired high quality dimensions
+        int highQualityWidth = sourceTexture.width * 2;  // For example, doubling the resolution
+        int highQualityHeight = sourceTexture.height * 2;
+
+        // Create a new high-quality texture with the desired dimensions
+        Texture2D highQualityTexture = new Texture2D(highQualityWidth, highQualityHeight, sourceTexture.format, false);
+
+        // Copy the source texture to the high-quality texture using bilinear filtering
+        for (int y = 0; y < highQualityHeight; y++)
+        {
+            for (int x = 0; x < highQualityWidth; x++)
+            {
+                // Calculate the corresponding pixel in the source texture
+                float u = (float)x / (highQualityWidth - 1);
+                float v = (float)y / (highQualityHeight - 1);
+                Color color = sourceTexture.GetPixelBilinear(u, v);
+
+                // Set the pixel color in the high-quality texture
+                highQualityTexture.SetPixel(x, y, color);
+            }
+        }
+
+        // Apply changes to the high-quality texture
+        highQualityTexture.Apply();
+
+        // Optionally, save the high-quality texture to a file
+        string highQualityPath = highQualityFolderPath + sourceTexture.name + "_high.png";
+        File.WriteAllBytes(highQualityPath, highQualityTexture.EncodeToPNG());
+        AssetDatabase.ImportAsset(highQualityPath);
+        Debug.Log($"Generated high quality texture at {highQualityPath}");
+
+        return highQualityTexture;
+    }
     private static void AssignTextureToBundle(string texturePath, string bundleName, string variant)
     {
         AssetImporter importer = AssetImporter.GetAtPath(texturePath);

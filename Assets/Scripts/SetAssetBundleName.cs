@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SetAssetBundleName : MonoBehaviour
 {
+   /*
     [MenuItem("Kainoo/Asset Bundles/Set AssetBundle Names for Scene")]
     static void SetAssetBundleNamesForScene()
     {
@@ -92,6 +93,7 @@ public class SetAssetBundleName : MonoBehaviour
             Debug.LogError("No material selected or selected object is not a material.");
         }
     }
+   */
    
 }
 #endif

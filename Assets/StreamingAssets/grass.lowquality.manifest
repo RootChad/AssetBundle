@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 3821485169
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: bee6355cf91b87f52bddac56b2b8588c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/LowQuality/Foliage_Lilypads_001_BaseColor.png
+Dependencies: []

@@ -51,9 +51,13 @@ public class DeferredAssetLoader : MonoBehaviour
         await LoadBundle(sceneBundleUrl);
 
         Debug.Log("Loading Scene: " + sceneName);
-        var loadSceneAsync = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-        await loadSceneAsync;
-        Debug.Log("Scene Loaded Additively: " + sceneName);
+        await LoadSceneAdditiveFromBundle(sceneBundleUrl, sceneName);
+
+        //Debug.Log("Loading Scene: " + sceneName);
+        //var loadSceneAsync = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+
+        //await loadSceneAsync;
+        //Debug.Log("Scene Loaded Additively: " + sceneName);
 
         Debug.Log("Loading Object Bundle: " + objectBundleUrl);
         await LoadBundle(objectBundleUrl);
@@ -101,6 +105,28 @@ public class DeferredAssetLoader : MonoBehaviour
         else
         {
             Debug.LogError($"Failed to load Bundle: {bundleUrl}");
+        }
+    }
+    private async UniTask LoadSceneAdditiveFromBundle(string bundleUrl, string sceneName)
+    {
+        if (loadedBundles.TryGetValue(bundleUrl, out var bundle))
+        {
+            string[] scenePaths = bundle.GetAllScenePaths();
+            foreach (var scenePath in scenePaths)
+            {
+                if (Path.GetFileNameWithoutExtension(scenePath) == sceneName)
+                {
+                    var loadSceneAsync = SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Additive);
+                    await loadSceneAsync;
+                    Debug.Log($"Scene Loaded Additively: {sceneName}");
+                    return;
+                }
+            }
+            Debug.LogError($"Scene {sceneName} not found in bundle {bundleUrl}");
+        }
+        else
+        {
+            Debug.LogError($"Bundle not found in loaded bundles: {bundleUrl}");
         }
     }
 

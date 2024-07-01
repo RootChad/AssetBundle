@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3355724579
+CRC: 2159258529
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f66914886f88880e43c70b16959d58d8
+    Hash: 2c0cef0ccea4d4ad4e75fa709ff62e7a
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 39d05dcf7486e3389ed9efefa5fa0f51
+    Hash: 01121b5e824b74caaca8d29b08b063ce
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -75,6 +75,7 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Scenes/TestScene2.unity
 - Assets/Scenes/TestAssetBundle.unity
 - Assets/Scenes/TestScene.unity
 Dependencies:

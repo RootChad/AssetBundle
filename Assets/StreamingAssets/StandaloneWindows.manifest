@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 2550696617
+CRC: 2373069480
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -17,6 +17,7 @@ AssetBundleManifest:
       Dependencies:
         Dependency_0: highmaterial.highquality
         Dependency_1: mat1.highquality
+        Dependency_2: grass.highquality
     Info_4:
       Name: objectbundle
       Dependencies:
@@ -36,4 +37,10 @@ AssetBundleManifest:
       Dependencies: {}
     Info_9:
       Name: mat1.lowquality
+      Dependencies: {}
+    Info_10:
+      Name: grass.highquality
+      Dependencies: {}
+    Info_11:
+      Name: grass.lowquality
       Dependencies: {}

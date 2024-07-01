@@ -834,7 +834,7 @@ MonoBehaviour:
   sceneBundleUrl: D:/Dev/newASSETBUNDLE/AssetBundle/Assets/StreamingAssets\scenebundle
   objectBundleUrl: D:/Dev/newASSETBUNDLE/AssetBundle/Assets/StreamingAssets\objectbundle
   materialBundleUrl: D:/Dev/newASSETBUNDLE/AssetBundle/Assets/StreamingAssets\materialsbundle
-  sceneName: TestScene
+  sceneName: TestScene2
   loadLowQualityButton: {fileID: 2024272395}
   loadHighQualityButton: {fileID: 1389573002}
   loadSceneButton: {fileID: 163484123}
