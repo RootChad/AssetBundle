@@ -9,7 +9,7 @@ public class FlexibleAssetBundleAssigner : MonoBehaviour
     private const string highQualityFolderPath = "Assets/Textures/HighQuality/";
     private const string lowQualityFolderPath = "Assets/Textures/LowQuality/";
 
-    [MenuItem("Tools/Assign Selected Scenes to Asset Bundle")]
+    [MenuItem("Kainoo/Tools/Assign Selected Scenes to Asset Bundle")]
     public static void AssignSelectedScenesToBundle()
     {
         string sceneBundleName = "scenebundle"; // You can change this to your desired bundle name
