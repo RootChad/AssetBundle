@@ -282,6 +282,7 @@ public class DeferredAssetLoader : MonoBehaviour
 
     private void AssignTextureVariant(Material mat, Dictionary<string, Texture> textureVariants, string variantKeyword)
     {
+        
         foreach (var texturePropertyName in mat.GetTexturePropertyNames())
         {
             Texture originalTexture = mat.GetTexture(texturePropertyName);

@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 2373069480
+CRC: 2824214042
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -9,38 +9,20 @@ AssetBundleManifest:
       Name: texture.sd
       Dependencies: {}
     Info_2:
-      Name: object
-      Dependencies:
-        Dependency_0: materialsbundle
-    Info_3:
-      Name: materialsbundle
-      Dependencies:
-        Dependency_0: highmaterial.highquality
-        Dependency_1: mat1.highquality
-        Dependency_2: grass.highquality
-    Info_4:
-      Name: objectbundle
-      Dependencies:
-        Dependency_0: materialsbundle
-    Info_5:
       Name: scenebundle
       Dependencies:
         Dependency_0: objectbundle
-    Info_6:
-      Name: highmaterial.highquality
-      Dependencies: {}
-    Info_7:
-      Name: highmaterial.lowquality
-      Dependencies: {}
-    Info_8:
-      Name: mat1.highquality
-      Dependencies: {}
-    Info_9:
-      Name: mat1.lowquality
-      Dependencies: {}
-    Info_10:
+    Info_3:
+      Name: objectbundle
+      Dependencies:
+        Dependency_0: materialsbundle
+    Info_4:
+      Name: materialsbundle
+      Dependencies:
+        Dependency_0: grass.highquality
+    Info_5:
       Name: grass.highquality
       Dependencies: {}
-    Info_11:
+    Info_6:
       Name: grass.lowquality
       Dependencies: {}

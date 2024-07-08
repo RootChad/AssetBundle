@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2248412876
+CRC: 2890937270
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e1f585f84ea49ec098d942d18b2e3c20
+    Hash: 86411a9c72d6ffb35bfa4ccaf4ea08c5
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 1eff53d114720a95b67621a8bf3d0e92
+    Hash: 4db82f4e618e4630b2fa8228e9c6d8d1
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -23,12 +23,8 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 65
   Script: {instanceID: 0}
-- Class: 135
-  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Prefabs/GrassCube.prefab
-- Assets/Prefabs/Sphere.prefab
-- Assets/Prefabs/Cube.prefab
 Dependencies:
 - D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/materialsbundle

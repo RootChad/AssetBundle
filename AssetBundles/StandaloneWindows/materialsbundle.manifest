@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1928408932
+CRC: 3194825429
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ab7ea53487f8462d92e886b29ef03265
+    Hash: fbbbae1417f694ccc0d7ffd8ac6c4812
   TypeTreeHash:
     serializedVersion: 2
     Hash: 82515b3694a1e5beae009c48c1198c34
@@ -18,9 +18,5 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Materials/grass.mat
-- Assets/Materials/mat1.mat
-- Assets/Materials/highmaterial.mat
 Dependencies:
 - D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/grass.highquality
-- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/highmaterial.highquality
-- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/mat1.highquality
