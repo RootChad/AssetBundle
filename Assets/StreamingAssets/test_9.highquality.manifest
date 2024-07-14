@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 3841890689
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c2b74fc79a629a601179e4623c53f9ac
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/HighQuality/pexels-francesco-ungaro-1525041.jpg
+Dependencies: []

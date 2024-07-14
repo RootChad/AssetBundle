@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 2372027991
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 925bf25859f0fb36fd2f2d1494283d78
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/LowQuality/pexels-eberhardgross-1624496.png
+Dependencies: []

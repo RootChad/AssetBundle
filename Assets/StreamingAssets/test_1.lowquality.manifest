@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 532127288
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f0903715c8a7627bb5cb1ed6ed3ecb9c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/LowQuality/pexels-8moments-1183099.png
+Dependencies: []

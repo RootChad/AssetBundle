@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2678279554
+CRC: 3078096113
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 11ddfbb67e5c66b41e4ed5a0d9a5f5c1
+    Hash: b7cc8e8a0284d3e5cae3e00910e4a64b
   TypeTreeHash:
     serializedVersion: 2
     Hash: f99bbe7c4ec0b724301a511b44f226f8
@@ -43,6 +43,6 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Scenes/TestScene2.unity
+- Assets/Mirado/Scenes/Mirado Scene.unity
 Dependencies:
-- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/objectbundle
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/objectbundle

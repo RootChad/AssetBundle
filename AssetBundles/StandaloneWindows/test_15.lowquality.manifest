@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 2293436374
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b264a9742208df60ab05d4e1f3325784
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/LowQuality/pexels-sohi-807598.png
+Dependencies: []

@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 3320695801
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 601135bb310c9b6d0438bf69f6f2f8aa
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/LowQuality/pexels-christian-heitz-285904-842711.png
+Dependencies: []

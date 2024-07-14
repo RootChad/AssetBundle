@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3194825429
+CRC: 4046761425
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fbbbae1417f694ccc0d7ffd8ac6c4812
+    Hash: 0218714891426d6d20cb29a665d0f928
   TypeTreeHash:
     serializedVersion: 2
     Hash: 82515b3694a1e5beae009c48c1198c34
@@ -17,6 +17,38 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Materials/grass.mat
+- Assets/Mirado/Materials/Test 2.mat
+- Assets/Mirado/Materials/Test 7.mat
+- Assets/Mirado/Materials/Test 12.mat
+- Assets/Mirado/Materials/Test 1.mat
+- Assets/Mirado/Materials/Test 8.mat
+- Assets/Mirado/Materials/Test 6.mat
+- Assets/Mirado/Materials/Test 14.mat
+- Assets/Mirado/Materials/Test 16.mat
+- Assets/Mirado/Materials/Test 11.mat
+- Assets/Mirado/Materials/Test 13.mat
+- Assets/Mirado/Materials/Test 4.mat
+- Assets/Mirado/Materials/Test 10.mat
+- Assets/Mirado/Materials/Test 15.mat
+- Assets/Mirado/Materials/Test 5.mat
+- Assets/Mirado/Materials/Test 9.mat
+- Assets/Mirado/Materials/Test.mat
+- Assets/Mirado/Materials/Test 3.mat
 Dependencies:
-- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/grass.highquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_1.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_10.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_11.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_12.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_13.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_14.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_15.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_16.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_2.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_3.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_4.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_5.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_6.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_7.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_8.lowquality
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_9.lowquality

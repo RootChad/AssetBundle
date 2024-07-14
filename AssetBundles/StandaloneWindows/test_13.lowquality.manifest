@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 1427499189
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 472c8b2e05fa0bcde1f7410a1361b6ed
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/LowQuality/pexels-lilartsy-1213447.png
+Dependencies: []

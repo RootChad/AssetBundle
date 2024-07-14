@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 967139759
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0003b14d300696425f531c182f30857b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/LowQuality/Screenshot (528).png
+Dependencies: []

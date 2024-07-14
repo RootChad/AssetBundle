@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 3290804152
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 95543b814fbfd6195f02ce5ccaea4895
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/LowQuality/pexels-steve-1266808.png
+Dependencies: []

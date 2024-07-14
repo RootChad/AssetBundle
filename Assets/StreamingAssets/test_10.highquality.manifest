@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 2689333693
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c0625d222e01b2c33a02713e541b67c3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/HighQuality/pexels-giorgio-de-angelis-482403-1413412.jpg
+Dependencies: []

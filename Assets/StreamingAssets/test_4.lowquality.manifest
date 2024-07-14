@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 3525940009
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0432a9e59b058698ac0c62061cd69614
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/LowQuality/pexels-asadphoto-1456291.png
+Dependencies: []

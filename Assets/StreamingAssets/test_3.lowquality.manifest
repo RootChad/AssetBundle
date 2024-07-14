@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 93952353
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f8aa4ea43332fa1f06f62962098b891e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/LowQuality/pexels-arts-1496373.png
+Dependencies: []

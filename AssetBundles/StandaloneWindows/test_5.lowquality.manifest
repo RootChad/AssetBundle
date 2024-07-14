@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 2614140961
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4d525b3a1864b7dbb471f982c3da445d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/LowQuality/pexels-chevanon-325044.png
+Dependencies: []

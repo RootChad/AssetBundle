@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 417002376
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1064dd70a72eb511eb16c059d661fc9a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/LowQuality/pexels-arnie-chou-304906-1229042.png
+Dependencies: []
