@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9203372a1569ae14d8eafc81065f063b
+guid: 4d697c92b75b639488c5459059cff5a5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,5 +94,5 @@ TextureImporter:
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
   userData: 
-  assetBundleName: test_5
+  assetBundleName: test_4
   assetBundleVariant: lowquality

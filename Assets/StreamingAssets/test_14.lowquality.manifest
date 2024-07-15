@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2326141108
+CRC: 979115206
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 63cde975aa76eec5763e9e0a3f2b34df
+    Hash: 1caa2134a4062a27b64f91473ea0d1e5
   TypeTreeHash:
     serializedVersion: 2
     Hash: b0363f7088f9761414f730641bf9a24b
@@ -13,5 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Textures/LowQuality/pexels-maoriginalphotography-1485894.png
+- Assets/Textures/LowQuality/pexels-sohi-807598.png
 Dependencies: []

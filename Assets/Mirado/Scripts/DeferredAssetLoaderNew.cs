@@ -217,8 +217,8 @@ public class DeferredAssetLoaderNew : MonoBehaviour
         yield return new WaitForSeconds(.1f);
         if(lowQualityTexturesBundleInLoading.Count != 0 || !canLoadHighQualityTextures) { yield break; }
 
-        yield return new WaitForSeconds(5f);
         canLoadHighQualityTextures = false;
+        yield return new WaitForSeconds(5f);
         Debug.Log("Loading high textures");
         // Load textures for the loaded materials
         foreach (var materialName in loadedMaterials.Keys)

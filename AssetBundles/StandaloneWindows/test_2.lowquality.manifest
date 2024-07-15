@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 417002376
+CRC: 3442525874
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1064dd70a72eb511eb16c059d661fc9a
+    Hash: f2850ffc045ed05ab3dc22b5631590cc
   TypeTreeHash:
     serializedVersion: 2
     Hash: b0363f7088f9761414f730641bf9a24b
@@ -13,5 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Textures/LowQuality/pexels-arnie-chou-304906-1229042.png
+- Assets/Textures/LowQuality/pexels-arts-1496373.png
 Dependencies: []

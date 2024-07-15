@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4990ea7e904ea304d9a8050e8e2f7601
+guid: 7ac52a5733bcbbe4b8581931016f0523
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -20,7 +20,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -94,5 +94,5 @@ TextureImporter:
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
   userData: 
-  assetBundleName: test_1
-  assetBundleVariant: highquality
+  assetBundleName: test_16
+  assetBundleVariant: lowquality

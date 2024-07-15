@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1330774111
+CRC: 3592703502
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: de67b7d654ef7b8a168579e976a31fca
+    Hash: 518bea66643991c33b4bf525fe3acded
   TypeTreeHash:
     serializedVersion: 2
     Hash: b0363f7088f9761414f730641bf9a24b
@@ -13,5 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Textures/LowQuality/pexels-iriser-1366957.png
+- Assets/Textures/LowQuality/pexels-iriser-1379640.png
 Dependencies: []

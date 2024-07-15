@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 93952353
+CRC: 506980383
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f8aa4ea43332fa1f06f62962098b891e
+    Hash: f25eb4aaac3eda8eedb977eb14a8e27b
   TypeTreeHash:
     serializedVersion: 2
     Hash: b0363f7088f9761414f730641bf9a24b
@@ -13,5 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Textures/LowQuality/pexels-arts-1496373.png
+- Assets/Textures/LowQuality/pexels-asadphoto-1456291.png
 Dependencies: []

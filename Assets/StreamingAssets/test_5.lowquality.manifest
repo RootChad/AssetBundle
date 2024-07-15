@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2614140961
+CRC: 3444104276
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 4d525b3a1864b7dbb471f982c3da445d
+    Hash: 44f9775e707becf1430a65cb01eaa87e
   TypeTreeHash:
     serializedVersion: 2
     Hash: b0363f7088f9761414f730641bf9a24b
@@ -13,5 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Textures/LowQuality/pexels-chevanon-325044.png
+- Assets/Textures/LowQuality/pexels-christian-heitz-285904-842711.png
 Dependencies: []

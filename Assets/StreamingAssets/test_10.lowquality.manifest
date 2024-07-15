@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4188510865
+CRC: 628802234
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 707b93ba2631bb612d58871925ddfa80
+    Hash: d5c18d93f48d2b0d005838a2519b1e00
   TypeTreeHash:
     serializedVersion: 2
     Hash: b0363f7088f9761414f730641bf9a24b
@@ -13,5 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Textures/LowQuality/pexels-giorgio-de-angelis-482403-1413412.png
+- Assets/Textures/LowQuality/pexels-iriser-1366957.png
 Dependencies: []
