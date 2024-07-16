@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2492027230
+CRC: 3277641957
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 86540204a039ac02fa3ce290c4f99b9e
+    Hash: 1d64dcdc0a94b3a9b8feaff2d92fec57
   TypeTreeHash:
     serializedVersion: 2
     Hash: b0363f7088f9761414f730641bf9a24b
@@ -13,5 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Textures/HighQuality/pexels-francesco-ungaro-1525041.jpg
+- Assets/Textures/HighQuality/pexels-francesco-ungaro-1525041.png
 Dependencies: []

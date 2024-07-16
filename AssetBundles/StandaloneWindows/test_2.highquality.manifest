@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3817068425
+CRC: 1498298864
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 733c5480f31bedde5a63a23a4e82e0c3
+    Hash: 34b942ea98bc28ba8c1babb58f3f87b3
   TypeTreeHash:
     serializedVersion: 2
     Hash: b0363f7088f9761414f730641bf9a24b
@@ -13,5 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Textures/HighQuality/pexels-arts-1496373.jpg
+- Assets/Textures/HighQuality/pexels-arts-1496373.png
 Dependencies: []

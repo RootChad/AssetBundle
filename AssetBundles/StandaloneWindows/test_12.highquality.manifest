@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 227545630
+CRC: 2303322209
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7f74d869818eedb31793bc63449ade27
+    Hash: 74379146445d6cee0e9949a4535335b1
   TypeTreeHash:
     serializedVersion: 2
     Hash: b0363f7088f9761414f730641bf9a24b
@@ -13,5 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Textures/HighQuality/pexels-lilartsy-1213447.jpg
+- Assets/Textures/HighQuality/pexels-lilartsy-1213447.png
 Dependencies: []

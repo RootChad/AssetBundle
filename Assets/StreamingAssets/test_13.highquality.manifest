@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3949001825
+CRC: 998160664
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 32ea15fac328be0017e8b66320f30f74
+    Hash: 4e1beb87e2dba9e60f6cfcc75625eb5d
   TypeTreeHash:
     serializedVersion: 2
     Hash: b0363f7088f9761414f730641bf9a24b
@@ -13,5 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Textures/HighQuality/pexels-maoriginalphotography-1485894.jpg
+- Assets/Textures/HighQuality/pexels-maoriginalphotography-1485894.png
 Dependencies: []

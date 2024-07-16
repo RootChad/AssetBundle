@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 832926877
+CRC: 781185565
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 52401ef77916400d14e4da2faba0b9e7
+    Hash: 70a4b358409d226455c0be1de1af6345
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4db82f4e618e4630b2fa8228e9c6d8d1
@@ -25,22 +25,22 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Mirado/Prefabs/Mirado Test Cube (7).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (2).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (3).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (12).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (4).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (8).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (13).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (1).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (15).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (10).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube.prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (9).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (14).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (5).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (11).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (16).prefab
-- Assets/Mirado/Prefabs/Mirado Test Cube (6).prefab
+- Assets/NewFolder/Prefabs/Test Cube (7).prefab
+- Assets/NewFolder/Prefabs/Test Cube (2).prefab
+- Assets/NewFolder/Prefabs/Test Cube (3).prefab
+- Assets/NewFolder/Prefabs/Test Cube (12).prefab
+- Assets/NewFolder/Prefabs/Test Cube (4).prefab
+- Assets/NewFolder/Prefabs/Test Cube (8).prefab
+- Assets/NewFolder/Prefabs/Test Cube (13).prefab
+- Assets/NewFolder/Prefabs/Test Cube (1).prefab
+- Assets/NewFolder/Prefabs/Test Cube (15).prefab
+- Assets/NewFolder/Prefabs/Test Cube (10).prefab
+- Assets/NewFolder/Prefabs/Test Cube.prefab
+- Assets/NewFolder/Prefabs/Test Cube (9).prefab
+- Assets/NewFolder/Prefabs/Test Cube (14).prefab
+- Assets/NewFolder/Prefabs/Test Cube (5).prefab
+- Assets/NewFolder/Prefabs/Test Cube (11).prefab
+- Assets/NewFolder/Prefabs/Test Cube (16).prefab
+- Assets/NewFolder/Prefabs/Test Cube (6).prefab
 Dependencies:
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/materialsbundle
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/materialsbundle

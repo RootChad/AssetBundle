@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1346549634
+CRC: 3915384269
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 151817d05d5fb9aa1151fefad42b40df
+    Hash: dc91c02d3e985dca9bb1074d2bdf9543
   TypeTreeHash:
     serializedVersion: 2
     Hash: b0363f7088f9761414f730641bf9a24b
@@ -13,5 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Textures/HighQuality/pexels-christian-heitz-285904-842711.jpg
+- Assets/Textures/HighQuality/pexels-christian-heitz-285904-842711.png
 Dependencies: []

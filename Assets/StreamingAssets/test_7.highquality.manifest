@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1621606762
+CRC: 3983217980
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 36b1643bf90f2c103d4266e0150e6d1b
+    Hash: 68953a14faa320cafde74a634f485374
   TypeTreeHash:
     serializedVersion: 2
     Hash: b0363f7088f9761414f730641bf9a24b
@@ -13,5 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Textures/HighQuality/pexels-eberhardgross-1624496.jpg
+- Assets/Textures/HighQuality/pexels-eberhardgross-1624496.png
 Dependencies: []

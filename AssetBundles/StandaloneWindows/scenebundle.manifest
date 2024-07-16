@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2959556394
+CRC: 899844672
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 3c9e65d475cbdca4001f4fd4413ba71b
+    Hash: 7366498679c68b0a82f4fc25a9e08f73
   TypeTreeHash:
     serializedVersion: 2
     Hash: f99bbe7c4ec0b724301a511b44f226f8
@@ -43,6 +43,7 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Mirado/Scenes/Mirado Scene.unity
+- Assets/NewFolder/Scenes/SandBoxScene.unity
 Dependencies:
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/objectbundle
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/materialsbundle
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/objectbundle

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3929819416
+CRC: 1612311773
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 260ff8d72b750601848af25cbec6336e
+    Hash: 7fefd61252d68df5219a70d61c9de756
   TypeTreeHash:
     serializedVersion: 2
     Hash: 82515b3694a1e5beae009c48c1198c34
@@ -17,38 +17,40 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Mirado/Materials/Test 2.mat
-- Assets/Mirado/Materials/Test 7.mat
-- Assets/Mirado/Materials/Test 12.mat
-- Assets/Mirado/Materials/Test 1.mat
-- Assets/Mirado/Materials/Test 8.mat
-- Assets/Mirado/Materials/Test 6.mat
-- Assets/Mirado/Materials/Test 14.mat
-- Assets/Mirado/Materials/Test 16.mat
-- Assets/Mirado/Materials/Test 11.mat
-- Assets/Mirado/Materials/Test 13.mat
-- Assets/Mirado/Materials/Test 4.mat
-- Assets/Mirado/Materials/Test 10.mat
-- Assets/Mirado/Materials/Test 15.mat
-- Assets/Mirado/Materials/Test 5.mat
-- Assets/Mirado/Materials/Test 9.mat
-- Assets/Mirado/Materials/Test.mat
-- Assets/Mirado/Materials/Test 3.mat
+- Assets/NewFolder/Materials/Test 2.mat
+- Assets/NewFolder/Materials/Test 7.mat
+- Assets/NewFolder/Materials/Test 12.mat
+- Assets/NewFolder/Materials/Test 1.mat
+- Assets/NewFolder/Materials/NewMat.mat
+- Assets/NewFolder/Materials/Test 8.mat
+- Assets/NewFolder/Materials/Test 6.mat
+- Assets/NewFolder/Materials/Test 14.mat
+- Assets/NewFolder/Materials/Test 16.mat
+- Assets/NewFolder/Materials/Test 11.mat
+- Assets/NewFolder/Materials/Test 13.mat
+- Assets/NewFolder/Materials/Test 4.mat
+- Assets/NewFolder/Materials/Test 10.mat
+- Assets/NewFolder/Materials/Test 15.mat
+- Assets/NewFolder/Materials/Test 5.mat
+- Assets/NewFolder/Materials/Test 9.mat
+- Assets/NewFolder/Materials/Test.mat
+- Assets/NewFolder/Materials/Test 3.mat
 Dependencies:
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_1.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_10.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_11.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_12.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_13.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_14.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_15.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_16.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_2.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_3.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_4.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_5.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_6.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_7.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_8.lowquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_9.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/newmat.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_1.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_10.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_11.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_12.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_13.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_14.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_15.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_16.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_2.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_3.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_4.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_5.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_6.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_7.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_8.lowquality
+- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/test_9.lowquality
