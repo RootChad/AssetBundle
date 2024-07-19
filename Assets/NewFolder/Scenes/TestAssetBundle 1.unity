@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -819,7 +819,7 @@ MonoBehaviour:
   sceneBundleUrl: D:\Projects\Unity\AssetBundle\Assets\StreamingAssets/scenebundle
   objectBundleUrl: D:\Projects\Unity\AssetBundle\Assets\StreamingAssets/objectbundle
   materialBundleUrl: D:\Projects\Unity\AssetBundle\Assets\StreamingAssets/materialsbundle
-  sceneName: Mirado Scene
+  sceneName: SandBoxScene
 --- !u!4 &1356358959
 Transform:
   m_ObjectHideFlags: 0
@@ -851,7 +851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1386321610
 Transform:
   m_ObjectHideFlags: 0
@@ -1072,6 +1072,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1712580456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1712580458}
+  - component: {fileID: 1712580459}
+  m_Layer: 0
+  m_Name: Deferred Online Assset Loader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1712580458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712580456}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 754.00195, y: 313.4638, z: -0.75421727}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1712580459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712580456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b34cbdf9d95dd4ca4392d9a7550a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://bundles-test-project.b-cdn.net/
+  sceneBundleName: scenebundle
+  objectBundleName: objectbundle
+  materialBundleName: materialsbundle
+  sceneName: SandBoxScene
 --- !u!1 &1853111194
 GameObject:
   m_ObjectHideFlags: 0
