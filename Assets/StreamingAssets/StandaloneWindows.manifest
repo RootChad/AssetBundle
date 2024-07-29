@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 341986131
+CRC: 422907850
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -14,24 +14,24 @@ AssetBundleManifest:
     Info_2:
       Name: materialsbundle
       Dependencies:
-        Dependency_0: test_15.lowquality
-        Dependency_1: test_6.lowquality
-        Dependency_2: test.lowquality
-        Dependency_3: test_4.lowquality
-        Dependency_4: test_13.lowquality
-        Dependency_5: test_16.lowquality
-        Dependency_6: test_8.lowquality
-        Dependency_7: test_5.lowquality
-        Dependency_8: test_12.lowquality
-        Dependency_9: test_1.lowquality
-        Dependency_10: test_7.lowquality
-        Dependency_11: test_3.lowquality
-        Dependency_12: test_2.lowquality
-        Dependency_13: test_10.lowquality
-        Dependency_14: test_11.lowquality
-        Dependency_15: test_14.lowquality
-        Dependency_16: test_9.lowquality
-        Dependency_17: newmat.lowquality
+        Dependency_0: test_15.highquality
+        Dependency_1: test_6.highquality
+        Dependency_2: test.highquality
+        Dependency_3: test_4.highquality
+        Dependency_4: test_13.highquality
+        Dependency_5: test_16.highquality
+        Dependency_6: test_8.highquality
+        Dependency_7: test_5.highquality
+        Dependency_8: test_12.highquality
+        Dependency_9: test_1.highquality
+        Dependency_10: test_7.highquality
+        Dependency_11: test_3.highquality
+        Dependency_12: test_2.highquality
+        Dependency_13: test_10.highquality
+        Dependency_14: test_11.highquality
+        Dependency_15: test_14.highquality
+        Dependency_16: test_9.highquality
+        Dependency_17: newmat.highquality
     Info_3:
       Name: test_15.highquality
       Dependencies: {}

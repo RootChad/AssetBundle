@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 899844672
+CRC: 1780205869
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7366498679c68b0a82f4fc25a9e08f73
+    Hash: 5e07a3d3d0922728066e7a4cbb771fbf
   TypeTreeHash:
     serializedVersion: 2
     Hash: f99bbe7c4ec0b724301a511b44f226f8
@@ -45,5 +45,5 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/NewFolder/Scenes/SandBoxScene.unity
 Dependencies:
-- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/materialsbundle
-- D:/Dev/newASSETBUNDLE/AssetBundle/AssetBundles/StandaloneWindows/objectbundle
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/materialsbundle
+- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/objectbundle

@@ -59,7 +59,7 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         // Load textures for each loaded material
         foreach (var materialName in loadedMaterials.Keys)
         {
-            await LoadAndCacheLowTexturesForMaterial(materialName);
+            await LoadAndCacheLowQualityTexturesForMaterial(materialName);
         }
     }
 
@@ -163,7 +163,7 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         }
     }
 
-    private async UniTask LoadAndCacheLowTexturesForMaterial(string materialName)
+    private async UniTask LoadAndCacheLowQualityTexturesForMaterial(string materialName)
     {
         string lowQualityBundleUrl = string.Concat(url, $"{materialName.Replace(' ', '_')}.lowquality");
 
@@ -289,6 +289,7 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
             if (originalTexture != null)
             {
                 string textureName = originalTexture.name.Replace(" (Instance)", "").ToLower();
+                Debug.Log($"Checking for texture variant mat: {mat.name}");
                 Debug.Log($"Checking for texture variant: {textureName}");
                 if (textureVariants.TryGetValue(textureName, out Texture variantTexture))
                 {

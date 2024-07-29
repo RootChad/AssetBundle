@@ -170,16 +170,43 @@ public class FlexibleAssetBundleAssignerNew : MonoBehaviour
                     string texturePath = AssetDatabase.GetAssetPath(texture);
                     if (!string.IsNullOrEmpty(texturePath))
                     {
-                        // Make the texture readable
+                        // Ensure the texture is readable
                         MakeTextureReadable(texturePath);
 
-                        // Move high quality texture to high quality folder
-                        string highQualityPath = highQualityFolderPath + Path.GetFileName(texturePath);
-                        AssetDatabase.MoveAsset(texturePath, highQualityPath);
-                        Debug.Log($"Moved high quality texture to {highQualityPath}");
+                        Texture2D highQualityTexture = null;
+                        string highQualityPath = null;
+
+                        // Check if the image is PNG or needs conversion
+                        if (Path.GetExtension(texturePath).ToLower() != ".png")
+                        {
+                            // Generate high quality texture
+                            Texture2D texture2D = AssetDatabase.LoadAssetAtPath<Texture2D>(texturePath);
+                            highQualityTexture = GenerateHighQualityTexture(texture2D);
+                            if (highQualityTexture != null)
+                            {
+                                highQualityPath = highQualityFolderPath + highQualityTexture.name + ".png";
+                                File.WriteAllBytes(highQualityPath, highQualityTexture.EncodeToPNG());
+                                AssetDatabase.ImportAsset(highQualityPath);
+                                Debug.Log($"Generated high quality texture at {highQualityPath}");
+                                Debug.Log("Delete: " + texturePath);
+                                File.Delete(texturePath);
+                            }
+                        }
+                        else
+                        {
+                            // Move high quality texture to high quality folder
+                            highQualityPath = highQualityFolderPath + Path.GetFileName(texturePath);
+                            AssetDatabase.MoveAsset(texturePath, highQualityPath);
+                            Debug.Log($"Moved high quality texture to {highQualityPath}");
+                        }
+
+                        // Assign high and high quality textures to variants
+                        highQualityTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(highQualityPath);
+                        string materialName = material.name.Replace(" ", "_").ToLower();
+                        AssignTextureToBundle(highQualityPath, $"{materialName}", "HighQuality");
+                        material.SetTexture(texturePropertyName, highQualityTexture);
 
                         // Generate low quality texture
-                        Texture2D highQualityTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(highQualityPath);
                         Texture2D lowQualityTexture = GenerateLowQualityTexture(highQualityTexture);
                         if (lowQualityTexture != null)
                         {
@@ -189,19 +216,27 @@ public class FlexibleAssetBundleAssignerNew : MonoBehaviour
                             Debug.Log($"Generated low quality texture at {lowQualityPath}");
 
                             // Assign high and low quality textures to variants
-                            string materialName = material.name.Replace(" ", "_").ToLower();
-                            AssignTextureToBundle(highQualityPath, $"{materialName}", "HighQuality");
-                           // AssignTextureToBundle(highQualityPath, $"{materialName}_highquality", "HighQuality");
-                           // AssignTextureToBundle(lowQualityPath, $"{materialName}_lowquality", "LowQuality");
+                            materialName = material.name.Replace(" ", "_").ToLower();
                             AssignTextureToBundle(lowQualityPath, $"{materialName}", "LowQuality");
-
-                            lowQualityTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(lowQualityPath);
-                            material.SetTexture(texturePropertyName, lowQualityTexture);
                         }
                     }
                 }
             }
         }
+    }
+
+    private static string ConvertToPng(Texture2D texture, string texturePath)
+    {
+        byte[] textureBytes = File.ReadAllBytes(texturePath);
+        Texture2D newTexture = new Texture2D(texture.width, texture.height);
+        newTexture.LoadImage(textureBytes);
+
+        string pngPath = Path.ChangeExtension(texturePath, ".png");
+        byte[] pngBytes = newTexture.EncodeToPNG();
+        File.WriteAllBytes(pngPath, pngBytes);
+        AssetDatabase.ImportAsset(pngPath);
+
+        return pngPath;
     }
 
     private static void MakeTextureReadable(string texturePath)
@@ -219,6 +254,38 @@ public class FlexibleAssetBundleAssignerNew : MonoBehaviour
         }
     }
 
+    private static Texture2D GenerateHighQualityTexture(Texture2D highQualityTexture)
+    {
+        if (highQualityTexture == null)
+        {
+            Debug.LogError("High quality texture is null.");
+            return null;
+        }
+
+        // Adjust dimensions to be multiples of 4
+        int width = highQualityTexture.width;
+        int height = highQualityTexture.height;
+
+        // Create a temporary RenderTexture
+        RenderTexture rt = RenderTexture.GetTemporary(width, height, 0, RenderTextureFormat.Default, RenderTextureReadWrite.Linear);
+
+        // Copy the high-quality texture to the RenderTexture
+        Graphics.Blit(highQualityTexture, rt);
+
+        // Create a new Texture2D with the correct format
+        RenderTexture.active = rt;
+        Texture2D newTexture = new Texture2D(width, height, TextureFormat.RGBA32, false);
+        newTexture.name = highQualityTexture.name;
+        newTexture.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+        newTexture.Apply();
+
+        // Release the temporary RenderTexture
+        RenderTexture.ReleaseTemporary(rt);
+        RenderTexture.active = null;
+
+        return newTexture;
+    }
+
     private static Texture2D GenerateLowQualityTexture(Texture2D highQualityTexture)
     {
         if (highQualityTexture == null)
@@ -228,8 +295,8 @@ public class FlexibleAssetBundleAssignerNew : MonoBehaviour
         }
 
         // Adjust dimensions to be multiples of 4
-        int width = (highQualityTexture.width / 8) / 4 * 4;
-        int height = (highQualityTexture.height / 8) / 4 * 4;
+        int width = (highQualityTexture.width / 2) / 4 * 4;
+        int height = (highQualityTexture.height / 2) / 4 * 4;
 
         // Create a temporary RenderTexture
         RenderTexture rt = RenderTexture.GetTemporary(width, height, 0, RenderTextureFormat.Default, RenderTextureReadWrite.Linear);
@@ -250,47 +317,49 @@ public class FlexibleAssetBundleAssignerNew : MonoBehaviour
 
         return lowQualityTexture;
     }
-    private static Texture2D GenerateHighQualityTexture(Texture2D sourceTexture)
-    {
-        if (sourceTexture == null)
-        {
-            Debug.LogError("Source texture is null.");
-            return null;
-        }
 
-        // Set desired high quality dimensions
-        int highQualityWidth = sourceTexture.width * 2;  // For example, doubling the resolution
-        int highQualityHeight = sourceTexture.height * 2;
+    //private static Texture2D GenerateHighQualityTexture(Texture2D sourceTexture)
+    //{
+    //    if (sourceTexture == null)
+    //    {
+    //        Debug.LogError("Source texture is null.");
+    //        return null;
+    //    }
 
-        // Create a new high-quality texture with the desired dimensions
-        Texture2D highQualityTexture = new Texture2D(highQualityWidth, highQualityHeight, sourceTexture.format, false);
+    //    // Set desired high quality dimensions
+    //    int highQualityWidth = sourceTexture.width * 2;  // For example, doubling the resolution
+    //    int highQualityHeight = sourceTexture.height * 2;
 
-        // Copy the source texture to the high-quality texture using bilinear filtering
-        for (int y = 0; y < highQualityHeight; y++)
-        {
-            for (int x = 0; x < highQualityWidth; x++)
-            {
-                // Calculate the corresponding pixel in the source texture
-                float u = (float)x / (highQualityWidth - 1);
-                float v = (float)y / (highQualityHeight - 1);
-                Color color = sourceTexture.GetPixelBilinear(u, v);
+    //    // Create a new high-quality texture with the desired dimensions
+    //    Texture2D highQualityTexture = new Texture2D(highQualityWidth, highQualityHeight, sourceTexture.format, false);
 
-                // Set the pixel color in the high-quality texture
-                highQualityTexture.SetPixel(x, y, color);
-            }
-        }
+    //    // Copy the source texture to the high-quality texture using bilinear filtering
+    //    for (int y = 0; y < highQualityHeight; y++)
+    //    {
+    //        for (int x = 0; x < highQualityWidth; x++)
+    //        {
+    //            // Calculate the corresponding pixel in the source texture
+    //            float u = (float)x / (highQualityWidth - 1);
+    //            float v = (float)y / (highQualityHeight - 1);
+    //            Color color = sourceTexture.GetPixelBilinear(u, v);
 
-        // Apply changes to the high-quality texture
-        highQualityTexture.Apply();
+    //            // Set the pixel color in the high-quality texture
+    //            highQualityTexture.SetPixel(x, y, color);
+    //        }
+    //    }
 
-        // Optionally, save the high-quality texture to a file
-        string highQualityPath = highQualityFolderPath + sourceTexture.name + "_high.png";
-        File.WriteAllBytes(highQualityPath, highQualityTexture.EncodeToPNG());
-        AssetDatabase.ImportAsset(highQualityPath);
-        Debug.Log($"Generated high quality texture at {highQualityPath}");
+    //    // Apply changes to the high-quality texture
+    //    highQualityTexture.Apply();
 
-        return highQualityTexture;
-    }
+    //    // Optionally, save the high-quality texture to a file
+    //    string highQualityPath = highQualityFolderPath + sourceTexture.name + "_high.png";
+    //    File.WriteAllBytes(highQualityPath, highQualityTexture.EncodeToPNG());
+    //    AssetDatabase.ImportAsset(highQualityPath);
+    //    Debug.Log($"Generated high quality texture at {highQualityPath}");
+
+    //    return highQualityTexture;
+    //}
+
     private static void AssignTextureToBundle(string texturePath, string bundleName, string variant)
     {
         AssetImporter importer = AssetImporter.GetAtPath(texturePath);
