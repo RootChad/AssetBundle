@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 594146703
+CRC: 1614685916
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 870c5dfd7e2bd7b94b7b08b32a5d1bcc
+    Hash: e08896fc4d56b6a7ad9307951f9b3182
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4db82f4e618e4630b2fa8228e9c6d8d1
@@ -28,18 +28,8 @@ Assets:
 - Assets/NewFolder/Prefabs/Test Cube (7).prefab
 - Assets/NewFolder/Prefabs/Test Cube (2).prefab
 - Assets/NewFolder/Prefabs/Test Cube (3).prefab
-- Assets/NewFolder/Prefabs/Test Cube (12).prefab
 - Assets/NewFolder/Prefabs/Test Cube (4).prefab
-- Assets/NewFolder/Prefabs/Test Cube (8).prefab
-- Assets/NewFolder/Prefabs/Test Cube (13).prefab
-- Assets/NewFolder/Prefabs/Test Cube (15).prefab
-- Assets/NewFolder/Prefabs/Test Cube (10).prefab
-- Assets/NewFolder/Prefabs/Test Cube.prefab
-- Assets/NewFolder/Prefabs/Test Cube (9).prefab
-- Assets/NewFolder/Prefabs/Test Cube (14).prefab
 - Assets/NewFolder/Prefabs/Test Cube (5).prefab
-- Assets/NewFolder/Prefabs/Test Cube (11).prefab
-- Assets/NewFolder/Prefabs/Test Cube (16).prefab
 - Assets/NewFolder/Prefabs/Test Cube (6).prefab
 Dependencies:
 - D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/materialsbundle

@@ -21,7 +21,9 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
     private Dictionary<string, Texture> highQualityTextures = new Dictionary<string, Texture>();
     private Dictionary<string, Material> loadedMaterials = new Dictionary<string, Material>();
 
+    private List<Material> materialsInWaiting = new List<Material>();
     private List<string> lowQualityTexturesBundleInLoading = new List<string>();
+    private List<string> highQualityTexturesBundleInLoading = new List<string>();
 
     private bool canLoadHighQualityTextures = true;
 
@@ -73,25 +75,32 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
 
         UnityWebRequest uwr = UnityWebRequestAssetBundle.GetAssetBundle(bundleUrl);
         Debug.Log($"Sending web request to : {bundleUrl}");
-        await uwr.SendWebRequest();
-        if(uwr.isDone && uwr.result == UnityWebRequest.Result.Success)
+        try
         {
-            Debug.Log($"Attempting to load bundle: {bundleUrl}");
-            AssetBundle bundle = DownloadHandlerAssetBundle.GetContent(uwr);
-            if (bundle != null)
+            await uwr.SendWebRequest();
+            if (uwr.isDone && uwr.result == UnityWebRequest.Result.Success)
             {
-                loadedBundles[bundleUrl] = bundle;
-                Debug.Log($"Loaded Bundle: {bundleUrl}");
+                Debug.Log($"Attempting to load bundle: {bundleUrl}");
+                AssetBundle bundle = DownloadHandlerAssetBundle.GetContent(uwr);
+                if (bundle != null)
+                {
+                    loadedBundles[bundleUrl] = bundle;
+                    Debug.Log($"Loaded Bundle: {bundleUrl}");
+                }
+                else
+                {
+                    Debug.LogError($"Failed to load Bundle: {bundleUrl}");
+                }
             }
             else
             {
-                Debug.LogError($"Failed to load Bundle: {bundleUrl}");
+                Debug.LogError($"Error downloading bundle file: {bundleUrl}");
+                return;
             }
         }
-        else
+        catch(UnityWebRequestException exception)
         {
-            Debug.LogError($"Error downloading bundle file: {bundleUrl}");
-            return;
+            throw exception;
         }
     }
 
@@ -168,27 +177,50 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         string lowQualityBundleUrl = string.Concat(url, $"{materialName.Replace(' ', '_')}.lowquality");
 
         lowQualityTexturesBundleInLoading.Add(lowQualityBundleUrl);
-        await LoadBundle(lowQualityBundleUrl);
-        if (loadedBundles.ContainsKey(lowQualityBundleUrl))
+        try
         {
-            await LoadTexturesFromBundle(lowQualityBundleUrl, lowQualityTextures, "lowquality");
-            UnloadBundle(lowQualityBundleUrl);
+            await LoadBundle(lowQualityBundleUrl);
+            if (loadedBundles.ContainsKey(lowQualityBundleUrl))
+            {
+                await LoadTexturesFromBundle(lowQualityBundleUrl, lowQualityTextures, "lowquality");
+                UnloadBundle(lowQualityBundleUrl);
+            }
+            Material mat = loadedMaterials[materialName];
+            AssignTextureVariant(mat, lowQualityTextures, "lowquality");
         }
-        lowQualityTexturesBundleInLoading.Remove(lowQualityBundleUrl);
-        StartCoroutine(CheckForHighQualityTextureLoading());
-        Material mat = loadedMaterials[materialName];
-        AssignTextureVariant(mat, lowQualityTextures, "lowquality");
+        catch (UnityWebRequestException exception)
+        {
+            if(exception.ResponseCode == 404)
+            {
+                Material mat = loadedMaterials[materialName];
+                materialsInWaiting.Add(mat);
+            }
+        }
+        finally
+        {
+            lowQualityTexturesBundleInLoading.Remove(lowQualityBundleUrl);
+            StartCoroutine(ProcessLowQualityMaterialsInWaiting());
+        }
     }
 
-    private System.Collections.IEnumerator CheckForHighQualityTextureLoading()
+    private System.Collections.IEnumerator ProcessLowQualityMaterialsInWaiting()
     {
         // Wait for all low quality bundles loading to be added to the lowQualityTexturesBundleInLoading list
         yield return new WaitForSeconds(.1f);
         if(lowQualityTexturesBundleInLoading.Count != 0 || !canLoadHighQualityTextures) { yield break; }
 
+        for(int i = materialsInWaiting.Count - 1; i >= 0; i--)
+        {
+            AssignTextureVariant(materialsInWaiting[i], lowQualityTextures, "lowquality");
+            materialsInWaiting.Remove(materialsInWaiting[i]);
+        }
+        StartHighQualityTextureLoading();
+    }
+
+    private void StartHighQualityTextureLoading()
+    {
         canLoadHighQualityTextures = false;
-        yield return new WaitForSeconds(5f);
-        Debug.Log("Loading high textures");
+        Debug.Log("Loading high quality textures");
         // Load textures for the loaded materials
         foreach (var materialName in loadedMaterials.Keys)
         {
@@ -200,14 +232,44 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
     {
         string highQualityBundleUrl = string.Concat(url, $"{materialName.Replace(' ', '_')}.highquality");
 
-        await LoadBundle(highQualityBundleUrl);
-        if (loadedBundles.ContainsKey(highQualityBundleUrl))
+        highQualityTexturesBundleInLoading.Add(highQualityBundleUrl);
+        try
         {
-            await LoadTexturesFromBundle(highQualityBundleUrl, highQualityTextures, "highquality");
-            UnloadBundle(highQualityBundleUrl);
+            await LoadBundle(highQualityBundleUrl);
+            if (loadedBundles.ContainsKey(highQualityBundleUrl))
+            {
+                await LoadTexturesFromBundle(highQualityBundleUrl, highQualityTextures, "highquality");
+                UnloadBundle(highQualityBundleUrl);
+            }
+            Material mat = loadedMaterials[materialName];
+            AssignTextureVariant(mat, highQualityTextures, "highquality");
         }
-        Material mat = loadedMaterials[materialName];
-        AssignTextureVariant(mat, highQualityTextures, "highquality");
+        catch (UnityWebRequestException exception)
+        {
+            if (exception.ResponseCode == 404)
+            {
+                Material mat = loadedMaterials[materialName];
+                materialsInWaiting.Add(mat);
+            }
+        }
+        finally
+        {
+            highQualityTexturesBundleInLoading.Remove(highQualityBundleUrl);
+            StartCoroutine(ProcessHighQualityMaterialsInWaiting());
+        }
+    }
+
+    private System.Collections.IEnumerator ProcessHighQualityMaterialsInWaiting()
+    {
+        // Wait for all low quality bundles loading to be added to the lowQualityTexturesBundleInLoading list
+        yield return new WaitForSeconds(.1f);
+        if (highQualityTexturesBundleInLoading.Count != 0) { yield break; }
+
+        for (int i = materialsInWaiting.Count - 1; i >= 0; i--)
+        {
+            AssignTextureVariant(materialsInWaiting[i], highQualityTextures, "highquality");
+            materialsInWaiting.Remove(materialsInWaiting[i]);
+        }
     }
 
     private async UniTask LoadTexturesFromBundle(string bundleUrl, Dictionary<string, Texture> textureDictionary, string variantKeyword)
@@ -282,7 +344,6 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
 
     private void AssignTextureVariant(Material mat, Dictionary<string, Texture> textureVariants, string variantKeyword)
     {
-
         foreach (var texturePropertyName in mat.GetTexturePropertyNames())
         {
             Texture originalTexture = mat.GetTexture(texturePropertyName);

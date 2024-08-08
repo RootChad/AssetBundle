@@ -1,12 +1,11 @@
 ManifestFileVersion: 0
-CRC: 71798051
+CRC: 99225454
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: scenebundle
       Dependencies:
         Dependency_0: objectbundle
-        Dependency_1: materialsbundle
     Info_1:
       Name: objectbundle
       Dependencies:
@@ -14,122 +13,31 @@ AssetBundleManifest:
     Info_2:
       Name: materialsbundle
       Dependencies:
-        Dependency_0: test_15.highquality
-        Dependency_1: test_6.highquality
-        Dependency_2: test_4.highquality
-        Dependency_3: test_17.highquality
-        Dependency_4: test_13.highquality
-        Dependency_5: test_16.highquality
-        Dependency_6: test_8.highquality
-        Dependency_7: test_5.highquality
-        Dependency_8: test_12.highquality
-        Dependency_9: test_7.highquality
-        Dependency_10: test_3.highquality
-        Dependency_11: test_2.highquality
-        Dependency_12: test_10.highquality
-        Dependency_13: test_11.highquality
-        Dependency_14: test_14.highquality
-        Dependency_15: test_9.highquality
-        Dependency_16: newmat.highquality
+        Dependency_0: test_7.highquality
+        Dependency_1: test_4.highquality
+        Dependency_2: test_5.highquality
+        Dependency_3: test_3.highquality
     Info_3:
-      Name: test_15.highquality
-      Dependencies: {}
-    Info_4:
-      Name: test_15.lowquality
-      Dependencies: {}
-    Info_5:
-      Name: test_6.highquality
-      Dependencies: {}
-    Info_6:
-      Name: test_6.lowquality
-      Dependencies: {}
-    Info_7:
-      Name: test_4.highquality
-      Dependencies: {}
-    Info_8:
-      Name: test_4.lowquality
-      Dependencies: {}
-    Info_9:
-      Name: test_17.highquality
-      Dependencies: {}
-    Info_10:
-      Name: test_17.lowquality
-      Dependencies: {}
-    Info_11:
-      Name: test_13.highquality
-      Dependencies: {}
-    Info_12:
-      Name: test_13.lowquality
-      Dependencies: {}
-    Info_13:
-      Name: test_16.highquality
-      Dependencies: {}
-    Info_14:
-      Name: test_16.lowquality
-      Dependencies: {}
-    Info_15:
-      Name: test_8.highquality
-      Dependencies: {}
-    Info_16:
-      Name: test_8.lowquality
-      Dependencies: {}
-    Info_17:
-      Name: test_5.highquality
-      Dependencies: {}
-    Info_18:
-      Name: test_5.lowquality
-      Dependencies: {}
-    Info_19:
-      Name: test_12.highquality
-      Dependencies: {}
-    Info_20:
-      Name: test_12.lowquality
-      Dependencies: {}
-    Info_21:
       Name: test_7.highquality
       Dependencies: {}
-    Info_22:
+    Info_4:
       Name: test_7.lowquality
       Dependencies: {}
-    Info_23:
+    Info_5:
+      Name: test_4.highquality
+      Dependencies: {}
+    Info_6:
+      Name: test_4.lowquality
+      Dependencies: {}
+    Info_7:
+      Name: test_5.highquality
+      Dependencies: {}
+    Info_8:
+      Name: test_5.lowquality
+      Dependencies: {}
+    Info_9:
       Name: test_3.highquality
       Dependencies: {}
-    Info_24:
+    Info_10:
       Name: test_3.lowquality
-      Dependencies: {}
-    Info_25:
-      Name: test_2.highquality
-      Dependencies: {}
-    Info_26:
-      Name: test_2.lowquality
-      Dependencies: {}
-    Info_27:
-      Name: test_10.highquality
-      Dependencies: {}
-    Info_28:
-      Name: test_10.lowquality
-      Dependencies: {}
-    Info_29:
-      Name: test_11.highquality
-      Dependencies: {}
-    Info_30:
-      Name: test_11.lowquality
-      Dependencies: {}
-    Info_31:
-      Name: test_14.highquality
-      Dependencies: {}
-    Info_32:
-      Name: test_14.lowquality
-      Dependencies: {}
-    Info_33:
-      Name: test_9.highquality
-      Dependencies: {}
-    Info_34:
-      Name: test_9.lowquality
-      Dependencies: {}
-    Info_35:
-      Name: newmat.highquality
-      Dependencies: {}
-    Info_36:
-      Name: newmat.lowquality
       Dependencies: {}
