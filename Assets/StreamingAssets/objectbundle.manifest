@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 781185565
+CRC: 594146703
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 25c8d2a9bb2d5f04daae8d388ddd1f4f
+    Hash: 870c5dfd7e2bd7b94b7b08b32a5d1bcc
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4db82f4e618e4630b2fa8228e9c6d8d1
@@ -32,7 +32,6 @@ Assets:
 - Assets/NewFolder/Prefabs/Test Cube (4).prefab
 - Assets/NewFolder/Prefabs/Test Cube (8).prefab
 - Assets/NewFolder/Prefabs/Test Cube (13).prefab
-- Assets/NewFolder/Prefabs/Test Cube (1).prefab
 - Assets/NewFolder/Prefabs/Test Cube (15).prefab
 - Assets/NewFolder/Prefabs/Test Cube (10).prefab
 - Assets/NewFolder/Prefabs/Test Cube.prefab

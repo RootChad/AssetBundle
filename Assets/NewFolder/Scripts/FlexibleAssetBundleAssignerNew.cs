@@ -6,8 +6,8 @@ using System.IO;
 
 public class FlexibleAssetBundleAssignerNew : MonoBehaviour
 {
-    private const string highQualityFolderPath = "Assets/Textures/HighQuality/";
-    private const string lowQualityFolderPath = "Assets/Textures/LowQuality/";
+    //private const string highQualityFolderPath = "Assets/Textures/HighQuality/";
+    //private const string lowQualityFolderPath = "Assets/Textures/LowQuality/";
 
     [MenuItem("Kainoo/Tools/Assign Selected Scenes to Asset Bundle - V2")]
     public static void AssignSelectedScenesToBundle()
@@ -16,9 +16,9 @@ public class FlexibleAssetBundleAssignerNew : MonoBehaviour
         string objectBundleName = "objectbundle";
         string materialsBundleName = "materialsbundle";
 
-        // Ensure the high and low quality folders exist
-        EnsureFolderExists(highQualityFolderPath);
-        EnsureFolderExists(lowQualityFolderPath);
+        //// Ensure the high and low quality folders exist
+        //EnsureFolderExists(highQualityFolderPath);
+        //EnsureFolderExists(lowQualityFolderPath);
 
         // Get selected scenes in the Project window
         Object[] selectedScenes = Selection.objects;
@@ -168,10 +168,30 @@ public class FlexibleAssetBundleAssignerNew : MonoBehaviour
                 if (texture != null)
                 {
                     string texturePath = AssetDatabase.GetAssetPath(texture);
+                    Debug.Log("TexturePath " + texturePath);
                     if (!string.IsNullOrEmpty(texturePath))
                     {
                         // Ensure the texture is readable
                         MakeTextureReadable(texturePath);
+
+                        string materialDirectory = Path.GetDirectoryName(AssetDatabase.GetAssetPath(material));
+                        Debug.Log("textureDirectory " + materialDirectory);
+                        string texturesFolderPath = Path.Combine(materialDirectory, "Textures");
+                        if (!Directory.Exists(texturesFolderPath))
+                        {
+                            Directory.CreateDirectory(texturesFolderPath);
+                        }
+                        string highQualityFolderPath = Path.Combine(texturesFolderPath, "High_Quality");
+                        if (!Directory.Exists(highQualityFolderPath))
+                        {
+                            Directory.CreateDirectory(highQualityFolderPath);
+                        }
+
+                        string lowQualityFolderPath = Path.Combine(texturesFolderPath, "Low_Quality");
+                        if (!Directory.Exists(lowQualityFolderPath))
+                        {
+                            Directory.CreateDirectory(lowQualityFolderPath);
+                        }
 
                         Texture2D highQualityTexture = null;
                         string highQualityPath = null;
@@ -184,7 +204,7 @@ public class FlexibleAssetBundleAssignerNew : MonoBehaviour
                             highQualityTexture = GenerateHighQualityTexture(texture2D);
                             if (highQualityTexture != null)
                             {
-                                highQualityPath = highQualityFolderPath + highQualityTexture.name + ".png";
+                                highQualityPath = Path.Combine(highQualityFolderPath, highQualityTexture.name + ".png");
                                 File.WriteAllBytes(highQualityPath, highQualityTexture.EncodeToPNG());
                                 AssetDatabase.ImportAsset(highQualityPath);
                                 Debug.Log($"Generated high quality texture at {highQualityPath}");
@@ -195,8 +215,8 @@ public class FlexibleAssetBundleAssignerNew : MonoBehaviour
                         else
                         {
                             // Move high quality texture to high quality folder
-                            highQualityPath = highQualityFolderPath + Path.GetFileName(texturePath);
-                            AssetDatabase.MoveAsset(texturePath, highQualityPath);
+                            highQualityPath = Path.Combine(highQualityFolderPath, Path.GetFileName(texturePath));
+                            Debug.Log($"Moving asset : {AssetDatabase.MoveAsset(texturePath, highQualityPath)}");
                             Debug.Log($"Moved high quality texture to {highQualityPath}");
                         }
 
@@ -210,7 +230,7 @@ public class FlexibleAssetBundleAssignerNew : MonoBehaviour
                         Texture2D lowQualityTexture = GenerateLowQualityTexture(highQualityTexture);
                         if (lowQualityTexture != null)
                         {
-                            string lowQualityPath = lowQualityFolderPath + lowQualityTexture.name + ".png";
+                            string lowQualityPath = Path.Combine(lowQualityFolderPath, lowQualityTexture.name + ".png");
                             File.WriteAllBytes(lowQualityPath, lowQualityTexture.EncodeToPNG());
                             AssetDatabase.ImportAsset(lowQualityPath);
                             Debug.Log($"Generated low quality texture at {lowQualityPath}");
