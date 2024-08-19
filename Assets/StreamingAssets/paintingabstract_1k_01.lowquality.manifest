@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3308022137
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3c9c8a12c2b1d383632f194b250147ac
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/MinimalistBedroom/Materials/Misc/PaintingAbstract_1k/Textures/Low_Quality/PaintingAbstract_Base_Color_1k.png
+- Assets/MinimalistBedroom/Materials/Misc/PaintingAbstract_1k/Textures/Low_Quality/PaintingAbstract_Metallic_1k.png
+- Assets/MinimalistBedroom/Materials/Misc/PaintingAbstract_1k/Textures/Low_Quality/PaintingAbstract_Height_1k.png
+- Assets/MinimalistBedroom/Materials/Misc/PaintingAbstract_1k/Textures/Low_Quality/PaintingAbstract_Normal_1k.png
+Dependencies: []

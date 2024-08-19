@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 3026296054
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 72d3eaceba030b4a00e1cfd3d1e9dbac
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/MinimalistBedroom/Materials/Wood/Plywood_1k/Textures/Low_Quality/Plywood_baseColour_01_1k.png
+Dependencies: []

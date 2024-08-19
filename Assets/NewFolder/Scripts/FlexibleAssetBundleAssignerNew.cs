@@ -334,8 +334,8 @@ public class FlexibleAssetBundleAssignerNew : MonoBehaviour
         }
 
         // Adjust dimensions to be multiples of 4
-        int width = (highQualityTexture.width / 2) / 4 * 4;
-        int height = (highQualityTexture.height / 2) / 4 * 4;
+        int width = (highQualityTexture.width / 6) / 4 * 4;
+        int height = (highQualityTexture.height / 6) / 4 * 4;
 
         // Create a temporary RenderTexture
         RenderTexture rt = RenderTexture.GetTemporary(width, height, 0, RenderTextureFormat.Default, RenderTextureReadWrite.Linear);

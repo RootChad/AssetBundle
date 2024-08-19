@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 2979335850
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 62738719c7a0586b1f839990ca97e056
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/MinimalistBedroom/Materials/Nature/LeafBase_512/Textures/High_Quality/LeafBase_normal_512.png
+- Assets/MinimalistBedroom/Materials/Nature/LeafBase_512/Textures/High_Quality/LeafBase_metalic_512
+  .png
+- Assets/MinimalistBedroom/Materials/Nature/LeafBase_512/Textures/High_Quality/LeafBase_Base_Color_512.png
+- Assets/MinimalistBedroom/Materials/Nature/LeafBase_512/Textures/High_Quality/LeafBase_height_512.png
+- Assets/MinimalistBedroom/Materials/Nature/LeafBase_512/Textures/High_Quality/LeafBase_Ambient_Occlusion_512.png
+Dependencies: []

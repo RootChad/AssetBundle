@@ -1116,11 +1116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b34cbdf9d95dd4ca4392d9a7550a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: https://bundles-test-project.b-cdn.net/
+  url: http://127.0.0.1:5500/myData/
   sceneBundleName: scenebundle
   objectBundleName: objectbundle
   materialBundleName: materialsbundle
-  sceneName: SandBoxScene
+  sceneName: TheMinmalist_Mian
 --- !u!1 &1853111194
 GameObject:
   m_ObjectHideFlags: 0

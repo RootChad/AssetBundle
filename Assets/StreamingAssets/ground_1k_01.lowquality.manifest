@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 1553300462
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 30f5f237527e92425b64c548d1ece8c3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/MinimalistBedroom/Materials/Nature/Ground_1k/Textures/Low_Quality/Ground_baseColour_1k.png
+- Assets/MinimalistBedroom/Materials/Nature/Ground_1k/Textures/Low_Quality/Ground_ao_1k.png
+- Assets/MinimalistBedroom/Materials/Nature/Ground_1k/Textures/Low_Quality/Ground_metalic_1k.png
+- Assets/MinimalistBedroom/Materials/Nature/Ground_1k/Textures/Low_Quality/Ground_height_1k.png
+- Assets/MinimalistBedroom/Materials/Nature/Ground_1k/Textures/Low_Quality/Ground_normal_1k.png
+Dependencies: []

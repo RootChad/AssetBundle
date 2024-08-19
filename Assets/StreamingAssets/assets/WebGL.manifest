@@ -1,0 +1,148 @@
+ManifestFileVersion: 1
+CompatibilityAssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: scenebundle
+      Hash: 53c97efd8a4b19a3cea32a05b198d2dc
+      CRC: 1456892327
+      Dependencies: {}
+        Dependency_0: bark_1k_01
+        Dependency_1: candlewaxdripping_512_01
+        Dependency_2: dirtywindow_01
+        Dependency_3: fabricclothes_1k_01
+        Dependency_4: fabricclothes_1k_02
+        Dependency_5: fabricwrinkled_2k_01
+        Dependency_6: ground_1k_01
+        Dependency_7: leafbase_512_01
+        Dependency_8: materialsbundle
+        Dependency_9: paintingabstract_1k_01
+        Dependency_10: plaster_1k_01
+        Dependency_11: plywood_1k_01
+        Dependency_12: plywood_1k_02
+        Dependency_13: rug_1k_01
+        Dependency_14: standardtexture_1k_01
+        Dependency_15: suede_1k_01
+        Dependency_16: woodfine_1k_01
+    Info_1:
+      Name: objectbundle
+      Hash: b45b361a4143bb950088c54f51d1d44e
+      CRC: 3984459198
+      Dependencies: {}
+        Dependency_0: bark_1k_01
+        Dependency_1: candlewaxdripping_512_01
+        Dependency_2: dirtywindow_01
+        Dependency_3: fabricclothes_1k_01
+        Dependency_4: fabricclothes_1k_02
+        Dependency_5: fabricwrinkled_2k_01
+        Dependency_6: ground_1k_01
+        Dependency_7: leafbase_512_01
+        Dependency_8: materialsbundle
+        Dependency_9: paintingabstract_1k_01
+        Dependency_10: plaster_1k_01
+        Dependency_11: plywood_1k_01
+        Dependency_12: plywood_1k_02
+        Dependency_13: rug_1k_01
+        Dependency_14: standardtexture_1k_01
+        Dependency_15: suede_1k_01
+        Dependency_16: woodfine_1k_01
+    Info_2:
+      Name: materialsbundle
+      Hash: 5bddcd871bcae572d2a3610ba4b05f09
+      CRC: 3547733939
+      Dependencies: {}
+        Dependency_0: bark_1k_01
+        Dependency_1: candlewaxdripping_512_01
+        Dependency_2: dirtywindow_01
+        Dependency_3: fabricclothes_1k_01
+        Dependency_4: fabricclothes_1k_02
+        Dependency_5: fabricwrinkled_2k_01
+        Dependency_6: ground_1k_01
+        Dependency_7: leafbase_512_01
+        Dependency_8: paintingabstract_1k_01
+        Dependency_9: plaster_1k_01
+        Dependency_10: plywood_1k_01
+        Dependency_11: plywood_1k_02
+        Dependency_12: rug_1k_01
+        Dependency_13: standardtexture_1k_01
+        Dependency_14: suede_1k_01
+        Dependency_15: woodfine_1k_01
+    Info_3:
+      Name: standardtexture_1k_01
+      Hash: 54a8406088c78b7cb48f022dbd6e281d
+      CRC: 1158978341
+      Dependencies: {}
+    Info_4:
+      Name: fabricclothes_1k_02
+      Hash: 031ad0401aaa5e0582356212c5ae52a7
+      CRC: 3773954036
+      Dependencies: {}
+    Info_5:
+      Name: plaster_1k_01
+      Hash: bf527fbfd1cf5ed4e4d43b68b487f319
+      CRC: 2968244945
+      Dependencies: {}
+    Info_6:
+      Name: fabricwrinkled_2k_01
+      Hash: 72f28ee66a70671000c5ecc30c3467f8
+      CRC: 3257490096
+      Dependencies: {}
+    Info_7:
+      Name: woodfine_1k_01
+      Hash: 69c8d61531e2d6f89861cc14c314db99
+      CRC: 4237720977
+      Dependencies: {}
+    Info_8:
+      Name: bark_1k_01
+      Hash: 33b37152b2da82f2fca52d1c37921b55
+      CRC: 4095745453
+      Dependencies: {}
+    Info_9:
+      Name: leafbase_512_01
+      Hash: cfa4be500b800a14170150316ba7eb11
+      CRC: 4016481113
+      Dependencies: {}
+    Info_10:
+      Name: candlewaxdripping_512_01
+      Hash: d8d661a9b948c7a5bf5930cb649d656f
+      CRC: 2893235332
+      Dependencies: {}
+    Info_11:
+      Name: fabricclothes_1k_01
+      Hash: 81fc936b7771ef51212994971a4cdfca
+      CRC: 4210637901
+      Dependencies: {}
+    Info_12:
+      Name: dirtywindow_01
+      Hash: 828c8edb023c5a4f20b534f6bd36a39b
+      CRC: 2453354424
+      Dependencies: {}
+    Info_13:
+      Name: rug_1k_01
+      Hash: 64fa04af7f5fb1d691d362b06aadf225
+      CRC: 168502789
+      Dependencies: {}
+    Info_14:
+      Name: plywood_1k_02
+      Hash: 89d387c8533f1a0c145feb7df5ee365a
+      CRC: 981728499
+      Dependencies: {}
+    Info_15:
+      Name: plywood_1k_01
+      Hash: e54af86bcb1fddd216ddd21ce009e6df
+      CRC: 3579278961
+      Dependencies: {}
+    Info_16:
+      Name: paintingabstract_1k_01
+      Hash: 4fc5917a3e21e931e7791a4b7a231eb3
+      CRC: 640977439
+      Dependencies: {}
+    Info_17:
+      Name: ground_1k_01
+      Hash: b6b06e81d2a61862f10c802b3d7dbb4e
+      CRC: 2477916906
+      Dependencies: {}
+    Info_18:
+      Name: suede_1k_01
+      Hash: 18f01ffc47560b60551f9bc9d2b2765d
+      CRC: 2012718514
+      Dependencies: {}

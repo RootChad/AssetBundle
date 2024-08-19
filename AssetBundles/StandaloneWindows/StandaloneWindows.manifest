@@ -1,11 +1,12 @@
 ManifestFileVersion: 0
-CRC: 99225454
+CRC: 4030635069
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: scenebundle
       Dependencies:
         Dependency_0: objectbundle
+        Dependency_1: materialsbundle
     Info_1:
       Name: objectbundle
       Dependencies:
@@ -13,31 +14,115 @@ AssetBundleManifest:
     Info_2:
       Name: materialsbundle
       Dependencies:
-        Dependency_0: test_7.highquality
-        Dependency_1: test_4.highquality
-        Dependency_2: test_5.highquality
-        Dependency_3: test_3.highquality
+        Dependency_0: standardtexture_1k_01.highquality
+        Dependency_1: fabricclothes_1k_02.highquality
+        Dependency_2: plaster_1k_01.highquality
+        Dependency_3: fabricwrinkled_2k_01.highquality
+        Dependency_4: woodfine_1k_01.highquality
+        Dependency_5: bark_1k_01.highquality
+        Dependency_6: leafbase_512_01.highquality
+        Dependency_7: candlewaxdripping_512_01.highquality
+        Dependency_8: fabricclothes_1k_01.highquality
+        Dependency_9: dirtywindow_01.highquality
+        Dependency_10: rug_1k_01.highquality
+        Dependency_11: plywood_1k_02.highquality
+        Dependency_12: plywood_1k_01.highquality
+        Dependency_13: paintingabstract_1k_01.highquality
+        Dependency_14: ground_1k_01.highquality
+        Dependency_15: suede_1k_01.highquality
     Info_3:
-      Name: test_7.highquality
+      Name: standardtexture_1k_01.highquality
       Dependencies: {}
     Info_4:
-      Name: test_7.lowquality
+      Name: standardtexture_1k_01.lowquality
       Dependencies: {}
     Info_5:
-      Name: test_4.highquality
+      Name: fabricclothes_1k_02.highquality
       Dependencies: {}
     Info_6:
-      Name: test_4.lowquality
+      Name: fabricclothes_1k_02.lowquality
       Dependencies: {}
     Info_7:
-      Name: test_5.highquality
+      Name: plaster_1k_01.highquality
       Dependencies: {}
     Info_8:
-      Name: test_5.lowquality
+      Name: plaster_1k_01.lowquality
       Dependencies: {}
     Info_9:
-      Name: test_3.highquality
+      Name: fabricwrinkled_2k_01.highquality
       Dependencies: {}
     Info_10:
-      Name: test_3.lowquality
+      Name: fabricwrinkled_2k_01.lowquality
+      Dependencies: {}
+    Info_11:
+      Name: woodfine_1k_01.highquality
+      Dependencies: {}
+    Info_12:
+      Name: woodfine_1k_01.lowquality
+      Dependencies: {}
+    Info_13:
+      Name: bark_1k_01.highquality
+      Dependencies: {}
+    Info_14:
+      Name: bark_1k_01.lowquality
+      Dependencies: {}
+    Info_15:
+      Name: leafbase_512_01.highquality
+      Dependencies: {}
+    Info_16:
+      Name: leafbase_512_01.lowquality
+      Dependencies: {}
+    Info_17:
+      Name: candlewaxdripping_512_01.highquality
+      Dependencies: {}
+    Info_18:
+      Name: candlewaxdripping_512_01.lowquality
+      Dependencies: {}
+    Info_19:
+      Name: fabricclothes_1k_01.highquality
+      Dependencies: {}
+    Info_20:
+      Name: fabricclothes_1k_01.lowquality
+      Dependencies: {}
+    Info_21:
+      Name: dirtywindow_01.highquality
+      Dependencies: {}
+    Info_22:
+      Name: dirtywindow_01.lowquality
+      Dependencies: {}
+    Info_23:
+      Name: rug_1k_01.highquality
+      Dependencies: {}
+    Info_24:
+      Name: rug_1k_01.lowquality
+      Dependencies: {}
+    Info_25:
+      Name: plywood_1k_02.highquality
+      Dependencies: {}
+    Info_26:
+      Name: plywood_1k_02.lowquality
+      Dependencies: {}
+    Info_27:
+      Name: plywood_1k_01.highquality
+      Dependencies: {}
+    Info_28:
+      Name: plywood_1k_01.lowquality
+      Dependencies: {}
+    Info_29:
+      Name: paintingabstract_1k_01.highquality
+      Dependencies: {}
+    Info_30:
+      Name: paintingabstract_1k_01.lowquality
+      Dependencies: {}
+    Info_31:
+      Name: ground_1k_01.highquality
+      Dependencies: {}
+    Info_32:
+      Name: ground_1k_01.lowquality
+      Dependencies: {}
+    Info_33:
+      Name: suede_1k_01.highquality
+      Dependencies: {}
+    Info_34:
+      Name: suede_1k_01.lowquality
       Dependencies: {}

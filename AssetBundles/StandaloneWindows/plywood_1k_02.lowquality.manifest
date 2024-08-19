@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 2109546136
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 75b878d560fd20e8bd1287cca96acba7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/MinimalistBedroom/Materials/Wood/Plywood_1k/Textures/Low_Quality/Plywood_normal_1k.png
+- Assets/MinimalistBedroom/Materials/Wood/Plywood_1k/Textures/Low_Quality/Plywood_metalic_1k.png
+- Assets/MinimalistBedroom/Materials/Wood/Plywood_1k/Textures/Low_Quality/Plywood_baseColour_02_1k.png
+Dependencies: []

@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 3742657410
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7980c3854a6f587abbecd29137dc1980
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/MinimalistBedroom/Materials/Misc/DirtyWindow_2k_01/Textures/Low_Quality/DirtyWindow_alphaMask_2k.png
+- Assets/MinimalistBedroom/Materials/Misc/DirtyWindow_2k_01/Textures/Low_Quality/DirtyWindow_normal_2k.png
+Dependencies: []

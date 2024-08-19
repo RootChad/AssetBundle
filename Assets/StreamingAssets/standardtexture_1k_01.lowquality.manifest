@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 4079268187
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: aa7c74b3d63292eca8f105b6172513bd
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/MinimalistBedroom/Materials/Misc/StandardTexture_1k/Textures/Low_Quality/TextureComposition_Packed_BaseColour_01.png
+Dependencies: []

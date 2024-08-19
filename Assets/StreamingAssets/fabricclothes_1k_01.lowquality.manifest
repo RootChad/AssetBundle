@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 4100204038
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 50c63a5adaaaeaff2e1d9816205f222a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/MinimalistBedroom/Materials/Fabric/FabricClothes_1k/Textures/Low_Quality/FabricClothes_metalic_1k.png
+- Assets/MinimalistBedroom/Materials/Fabric/FabricClothes_1k/Textures/Low_Quality/FabricClothes_normal_1k.png
+- Assets/MinimalistBedroom/Materials/Fabric/FabricClothes_1k/Textures/Low_Quality/FabricClothes_ao_1k.png
+- Assets/MinimalistBedroom/Materials/Fabric/FabricClothes_1k/Textures/Low_Quality/FabricClothes_height_1k.png
+- Assets/MinimalistBedroom/Materials/Fabric/FabricClothes_1k/Textures/Low_Quality/FabricClothes_baseColour_1k.png
+Dependencies: []

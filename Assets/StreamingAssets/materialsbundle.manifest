@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3082631026
+CRC: 134730933
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 543f6a790074466303951a0e9d0c1eef
+    Hash: 84f495545994f016c79e557f26185458
   TypeTreeHash:
     serializedVersion: 2
     Hash: 82515b3694a1e5beae009c48c1198c34
@@ -17,14 +17,45 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/NewFolder/Materials/Test 2.mat
-- Assets/NewFolder/Materials 1/Test 5.mat
-- Assets/NewFolder/Materials 1/Test 4.mat
-- Assets/NewFolder/Materials 1/Test 6.mat
-- Assets/NewFolder/Materials 1/Test 7.mat
-- Assets/NewFolder/Materials/Test 3.mat
+- Assets/MinimalistBedroom/Materials/Misc/GlassGloss_01.mat
+- Assets/MinimalistBedroom/Materials/Fabric/FabrickClothes_1k/FabricClothes_1k_02.mat
+- Assets/MinimalistBedroom/Materials/Nature/LeafBase_512/LeafBase_512_01.mat
+- Assets/MinimalistBedroom/Materials/Wood/WoodFine_1k/WoodFine_1k_01.mat
+- Assets/MinimalistBedroom/Materials/Misc/DirtyWindow_2k_01/DirtyWindow_01.mat
+- Assets/MinimalistBedroom/Materials/Fabric/FabricWrinkled_2k/FabricWrinkled_2k_02.mat
+- Assets/MinimalistBedroom/Materials/Misc/CandleWaxDripping_512/CandleWaxDripping_512_01.mat
+- Assets/MinimalistBedroom/Materials/Fabric/FabrickClothes_1k/FabricClothes_1k_01.mat
+- Assets/MinimalistBedroom/Materials/Nature/Ground_1k/Ground_1k_01.mat
+- Assets/MinimalistBedroom/Materials/Nature/Bark_1k/Bark_1k_01.mat
+- Assets/MinimalistBedroom/Materials/Fabric/Suede_1k/Suede_1k_01.mat
+- Assets/MinimalistBedroom/Materials/Misc/White_01.mat
+- Assets/MinimalistBedroom/Materials/Metals/StanlessSteelClean_01.mat
+- Assets/MinimalistBedroom/Materials/Fabric/Rug_1k/Rug_1k_01.mat
+- Assets/MinimalistBedroom/Materials/Misc/Mirror_01.mat
+- Assets/MinimalistBedroom/Materials/Misc/LightEmission_01.mat
+- Assets/MinimalistBedroom/Materials/Misc/PaintingAbstract_1k/PaintingAbstract_1k_01.mat
+- Assets/MinimalistBedroom/Materials/Wood/WoodFine_1k/WoodFine_1k_02.mat
+- Assets/MinimalistBedroom/Materials/Fabric/FabricWrinkled_2k/FabricWrinkled_2k_01.mat
+- Assets/MinimalistBedroom/Materials/Wood/Plywood_1k/Plywood_1k_02.mat
+- Assets/MinimalistBedroom/Materials/Wood/Plywood_1k/Plywood_1k_01.mat
+- Assets/MinimalistBedroom/Materials/Misc/StandardTexture_1k/StandardTexture_1k_02.mat
+- Assets/MinimalistBedroom/Materials/Misc/Plaster_1k/Plaster_1k_01.mat
+- Assets/MinimalistBedroom/Materials/Misc/StandardTexture_1k/StandardTexture_1k_01.mat
+- Assets/MinimalistBedroom/Materials/Fabric/FabricClothes_1k/FabricClothes_1k_01.mat
 Dependencies:
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_3.highquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_4.highquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_5.highquality
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/test_7.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/bark_1k_01.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/candlewaxdripping_512_01.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/dirtywindow_01.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/fabricclothes_1k_01.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/fabricclothes_1k_02.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/fabricwrinkled_2k_01.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/ground_1k_01.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/leafbase_512_01.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/paintingabstract_1k_01.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/plaster_1k_01.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/plywood_1k_01.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/plywood_1k_02.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/rug_1k_01.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/standardtexture_1k_01.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/suede_1k_01.highquality
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/WebGL/woodfine_1k_01.highquality

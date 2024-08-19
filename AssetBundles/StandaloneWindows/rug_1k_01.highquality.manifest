@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 859348097
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: dcdb99972e43e662765055d82c2f5787
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/MinimalistBedroom/Materials/Fabric/Rug_1k/Textures/High_Quality/Rug_metalic_1k.png
+- Assets/MinimalistBedroom/Materials/Fabric/Rug_1k/Textures/High_Quality/Rug_normal_1k.png
+- Assets/MinimalistBedroom/Materials/Fabric/Rug_1k/Textures/High_Quality/Rug_height_1k.png
+- Assets/MinimalistBedroom/Materials/Fabric/Rug_1k/Textures/High_Quality/Rug_baseColour_1k.png
+Dependencies: []

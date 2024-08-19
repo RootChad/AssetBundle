@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 302626615
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 381814c5a4285056791fe762091fc358
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/MinimalistBedroom/Materials/Wood/WoodFine_1k/Textures/High_Quality/WoodFine_normal_1k.png
+- Assets/MinimalistBedroom/Materials/Wood/WoodFine_1k/Textures/High_Quality/WoodFine_metalic_1k.png
+- Assets/MinimalistBedroom/Materials/Wood/WoodFine_1k/Textures/High_Quality/WoodFine_baseColour_1k.png
+Dependencies: []

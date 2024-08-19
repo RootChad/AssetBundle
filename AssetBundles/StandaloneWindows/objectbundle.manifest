@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1614685916
+CRC: 1035701917
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e08896fc4d56b6a7ad9307951f9b3182
+    Hash: 4bd8c5edc4d1d8a317795da5684c47f5
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 4db82f4e618e4630b2fa8228e9c6d8d1
+    Hash: 7428a5560c5923e1a894e3e2445b8fc0
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -17,19 +17,64 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 23
   Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
 - Class: 33
   Script: {instanceID: 0}
 - Class: 43
   Script: {instanceID: 0}
-- Class: 65
+- Class: 48
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/NewFolder/Prefabs/Test Cube (7).prefab
-- Assets/NewFolder/Prefabs/Test Cube (2).prefab
-- Assets/NewFolder/Prefabs/Test Cube (3).prefab
-- Assets/NewFolder/Prefabs/Test Cube (4).prefab
-- Assets/NewFolder/Prefabs/Test Cube (5).prefab
-- Assets/NewFolder/Prefabs/Test Cube (6).prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/NightLight_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/TvStand_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/StandingLamp_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/PlantPot_c_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/RoundBox_a_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Cupboard_a_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/CoatHanger_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Plant_b_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Book_a_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Book_b_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Exterior/WindowFrame_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Exterior/Roof_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Vase_b_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/WallMirror_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/SlidingDoor_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/CandleOrnament_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/ShirtStackTwo_02.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Plant_c_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Painting_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Pillow_a_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Exterior/Walls_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Sculpture_a_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/RoundBox_b_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Sculpture_b_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/ScentedSticks_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Exterior/Floor_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Pillow_b_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Tv_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Vase_a_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/ShirtStackThree_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/FoldedShirt_02.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Pot_a_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Sculpture_c_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/ShirtStackTwo_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Plant_a_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Rug_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/FoldedShirt_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/LED_Light_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Stool_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Pot_b_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Tray_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/RoundBox_c_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Bed_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/FormalShirt_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Exterior/Windows_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/LaundryBasket_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/ShirtStackThree_02.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/WoodBox_01.prefab
+- Assets/MinimalistBedroom/Prefabs/Interior/Sculpture_e_01.prefab
 Dependencies:
-- D:/Projects/Unity/AssetBundle/AssetBundles/StandaloneWindows/materialsbundle
+- D:/ProjetKainoo/assetbundle/AssetBundle/AssetBundles/StandaloneWindows/materialsbundle

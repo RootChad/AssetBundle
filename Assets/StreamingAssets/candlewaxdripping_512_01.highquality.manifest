@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 829369349
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1a09a210cda97924e0315e4ea55e14e7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/MinimalistBedroom/Materials/Misc/CandleWaxDripping_512/Textures/High_Quality/candle_wax_Normal_512.png
+- Assets/MinimalistBedroom/Materials/Misc/CandleWaxDripping_512/Textures/High_Quality/candle_wax_Height_512.png
+- Assets/MinimalistBedroom/Materials/Misc/CandleWaxDripping_512/Textures/High_Quality/candle_wax_Base_Color_512.png
+- Assets/MinimalistBedroom/Materials/Misc/CandleWaxDripping_512/Textures/High_Quality/candle_wax_Metallic_512.png
+Dependencies: []

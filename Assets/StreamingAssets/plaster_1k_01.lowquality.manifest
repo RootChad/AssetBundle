@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 623198622
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2bb0d62d2cec551ad555e2be8927e686
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/MinimalistBedroom/Materials/Misc/Plaster_1k/Textures/Low_Quality/Plaster_normal_1k.png
+- Assets/MinimalistBedroom/Materials/Misc/Plaster_1k/Textures/Low_Quality/Plaster_baseColour_1k.png
+- Assets/MinimalistBedroom/Materials/Misc/Plaster_1k/Textures/Low_Quality/Plaster_metalic_1k.png
+Dependencies: []
