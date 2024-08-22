@@ -16,13 +16,13 @@ namespace ch.kainoo.platform.editor
     {
         static BuildAssetBundlesAutoInvoke()
         {
-            BuildPlayerWindow.RegisterBuildPlayerHandler((options) =>
-                    {
-                        Debug.Log("Building asset bundles before build...");
-                        BuildAssetBundles.BuildForCurrentEditorPlatform();
-                        Debug.Log("Starting build...");
-                        BuildPlayerWindow.DefaultBuildMethods.BuildPlayer(options);
-                    });
+            //BuildPlayerWindow.RegisterBuildPlayerHandler((options) =>
+            //        {
+            //            Debug.Log("Building asset bundles before build...");
+            //            BuildAssetBundles.BuildForCurrentEditorPlatform();
+            //            Debug.Log("Starting build...");
+            //            BuildPlayerWindow.DefaultBuildMethods.BuildPlayer(options);
+            //        });
         }
     }
 

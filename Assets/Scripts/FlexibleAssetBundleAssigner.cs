@@ -3,11 +3,14 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using System.IO;
+using System.Collections.Generic;
 
 public class FlexibleAssetBundleAssigner : MonoBehaviour
 {
     private const string highQualityFolderPath = "Assets/Textures/HighQuality/";
     private const string lowQualityFolderPath = "Assets/Textures/LowQuality/";
+
+    private List<string> bundledMaterialNames;
 
     [MenuItem("Kainoo/Tools/Assign Selected Scenes to Asset Bundle")]
     public static void AssignSelectedScenesToBundle()

@@ -6,6 +6,10 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 using UnityEngine.Networking;
+using System.Collections;
+using Unity.Mathematics;
+using Unity.VisualScripting;
+using static UnityEngine.Rendering.DebugUI;
 
 public class DeferredOnlineAssetLoader : MonoBehaviour
 {
@@ -63,6 +67,7 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         {
             await LoadAndCacheLowQualityTexturesForMaterial(materialName);
         }
+        await ProcessLowQualityMaterialsInWaiting();
     }
 
     private async UniTask LoadBundle(string bundleUrl)
@@ -199,33 +204,46 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         finally
         {
             lowQualityTexturesBundleInLoading.Remove(lowQualityBundleUrl);
-            StartCoroutine(ProcessLowQualityMaterialsInWaiting());
         }
     }
 
-    private System.Collections.IEnumerator ProcessLowQualityMaterialsInWaiting()
+    private async UniTask ProcessLowQualityMaterialsInWaiting()
     {
         // Wait for all low quality bundles loading to be added to the lowQualityTexturesBundleInLoading list
-        yield return new WaitForSeconds(.1f);
-        if(lowQualityTexturesBundleInLoading.Count != 0 || !canLoadHighQualityTextures) { yield break; }
+        await UniTask.Delay(100);
+        if(lowQualityTexturesBundleInLoading.Count != 0 || !canLoadHighQualityTextures) { return; }
 
         for(int i = materialsInWaiting.Count - 1; i >= 0; i--)
         {
             AssignTextureVariant(materialsInWaiting[i], lowQualityTextures, "lowquality");
             materialsInWaiting.Remove(materialsInWaiting[i]);
         }
-        StartHighQualityTextureLoading();
+        await StartHighQualityTextureLoading();
     }
 
-    private void StartHighQualityTextureLoading()
+    private async UniTask RefreshMaterials()
+    {
+        foreach (var kvp in loadedMaterials)
+        {
+            Material mat = kvp.Value;
+            Shader shader = mat.shader;
+            //mat.shader = null;
+            await UniTask.Delay(1);
+            mat.shader = shader;
+        }
+    }
+
+    private async UniTask StartHighQualityTextureLoading()
     {
         canLoadHighQualityTextures = false;
         Debug.Log("Loading high quality textures");
         // Load textures for the loaded materials
         foreach (var materialName in loadedMaterials.Keys)
         {
-            LoadAndCacheHighTexturesForMaterial(materialName);
+            await LoadAndCacheHighTexturesForMaterial(materialName);
         }
+        await ProcessHighQualityMaterialsInWaiting();
+        //RefreshMaterials().Forget();
     }
 
     private async UniTask LoadAndCacheHighTexturesForMaterial(string materialName)
@@ -255,15 +273,14 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         finally
         {
             highQualityTexturesBundleInLoading.Remove(highQualityBundleUrl);
-            StartCoroutine(ProcessHighQualityMaterialsInWaiting());
         }
     }
 
-    private System.Collections.IEnumerator ProcessHighQualityMaterialsInWaiting()
+    private async UniTask ProcessHighQualityMaterialsInWaiting()
     {
         // Wait for all low quality bundles loading to be added to the lowQualityTexturesBundleInLoading list
-        yield return new WaitForSeconds(.1f);
-        if (highQualityTexturesBundleInLoading.Count != 0) { yield break; }
+        await UniTask.Delay(100);
+        if (highQualityTexturesBundleInLoading.Count != 0) { return; }
 
         for (int i = materialsInWaiting.Count - 1; i >= 0; i--)
         {
@@ -363,5 +380,29 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
                 }
             }
         }
+        RefreshMaterial(mat).Forget();
+    }
+
+    private async UniTask RefreshMaterial(Material mat)
+    {
+        // Save the main texture of the material
+        Texture mainTexture = mat.mainTexture;
+
+        // Optional: Save other properties as well if needed
+
+        // Store the current shader
+        Shader shader = mat.shader;
+
+        // Wait for a frame (or a brief delay)
+        await UniTask.Delay(1);
+
+        // Reassign the shader
+        mat.shader = shader;
+
+        // Restore the saved texture
+        mat.mainTexture = mainTexture;
+        mat.EnableKeyword("_ALPHAPREMULTIPLY_ON");
+
+        // Optional: Restore other properties if needed
     }
 }

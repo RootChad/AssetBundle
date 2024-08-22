@@ -10,6 +10,7 @@ public class FlexibleAssetBundleAssignerNew : MonoBehaviour
     //private const string highQualityFolderPath = "Assets/Textures/HighQuality/";
     //private const string lowQualityFolderPath = "Assets/Textures/LowQuality/";
     private static Dictionary<Texture, (string, string)> bundledTextures = new Dictionary<Texture, (string, string)>();
+    private static List<Material> bundledMaterials = new List<Material>();
 
     [MenuItem("Kainoo/Tools/Assign Selected Scenes to Asset Bundle - V2")]
     public static void AssignSelectedScenesToBundle()
@@ -19,6 +20,7 @@ public class FlexibleAssetBundleAssignerNew : MonoBehaviour
         string materialsBundleName = "materialsbundle";
 
         bundledTextures.Clear();
+        bundledMaterials.Clear();
 
         //// Ensure the high and low quality folders exist
         //EnsureFolderExists(highQualityFolderPath);
@@ -108,11 +110,30 @@ public class FlexibleAssetBundleAssignerNew : MonoBehaviour
                     if (material != null)
                     {
                         string materialPath = AssetDatabase.GetAssetPath(material);
+                        bool duplicateMaterialName = false;
+                        foreach(var mat in bundledMaterials)
+                        {
+                            if (mat.name.Equals(material.name))
+                            {
+                                duplicateMaterialName = true;
+                            }
+                        }
+                        if (!bundledMaterials.Contains(material) && duplicateMaterialName)
+                        {
+                            Debug.Log($"Material: {material.name}");
+                            Debug.Log($"Material path: {materialPath}");
+                            AssetDatabase.RenameAsset(materialPath, material.name + "_01");
+                            AssetDatabase.Refresh();
+                            materialPath = AssetDatabase.GetAssetPath(material);
+                            Debug.Log($"New Material: {material.name}");
+                            Debug.Log($"New Material path: {materialPath}");
+                        }
                         if (!string.IsNullOrEmpty(materialPath) && !materialPath.StartsWith("Resources/unity_builtin_extra"))
                         {
                             Debug.Log($"Assigning material {materialPath} to bundle {materialsBundleName}");
                             AssignMaterialToBundle(materialPath, materialsBundleName);
                             AssignTexturesToVariant(material);
+                            bundledMaterials.Add(material);
                         }
                     }
                 }
