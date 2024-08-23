@@ -47,17 +47,45 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         string objectBundleUrl = string.Concat(this.url, objectBundleName);
         string materialBundleUrl = string.Concat(this.url, materialBundleName);
 
-        // Download and put scene bundle inside loadedBundles list 
-        await LoadBundle(sceneBundleUrl);
+        try
+        {
+            // Download and put scene bundle inside loadedBundles list 
+            await LoadBundle(sceneBundleUrl);
+        }
+        catch(Exception ex)
+        {
+            Debug.Log(ex);
+        }
 
-        // Load scene in bundle
-        await LoadSceneAdditiveFromBundle(sceneBundleUrl, sceneName);
+        try
+        {
+            // Load scene in bundle
+            await LoadSceneAdditiveFromBundle(sceneBundleUrl, sceneName);
+        }
+        catch(Exception ex)
+        {
+            Debug.Log(ex);
+        }
 
-        // Download and put objects bundle inside loadedBundles list 
-        await LoadBundle(objectBundleUrl);
+        try
+        {
+            // Download and put objects bundle inside loadedBundles list 
+            await LoadBundle(objectBundleUrl);
+        }
+        catch(Exception ex)
+        {
+            Debug.Log(ex);
+        }
 
-        // Download and put materials bundle inside loadedBundles list 
-        await LoadBundle(materialBundleUrl);
+        try
+        {
+            // Download and put materials bundle inside loadedBundles list 
+            await LoadBundle(materialBundleUrl);
+        }
+        catch(Exception ex)
+        {
+            Debug.Log(ex);
+        }
 
         // Load materials inside bundles and put them inside loadedMaterials list
         await LoadMaterialsFromBundle(materialBundleUrl);
