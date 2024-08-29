@@ -97,6 +97,7 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
 
     private async UniTask LoadAndCacheLowQualityTextures()
     {
+        Debug.Log("LoadAndCacheLowQualityTextures");
         // Load textures for each loaded material
         foreach (var materialName in loadedMaterials.Keys)
         {
@@ -106,7 +107,7 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
                 Debug.Log("Waiting : " + lowQualityTexturesBundleInLoading.Count);
                 await UniTask.NextFrame();
             }
-            Debug.Log("IN : " + lowQualityTexturesBundleInLoading.Count);
+            Debug.Log("Current Count : " + lowQualityTexturesBundleInLoading.Count);
             LoadAndCacheLowQualityTexturesForMaterial(materialName).Forget();
         }
     }
@@ -221,12 +222,11 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
     private async UniTask LoadAndCacheLowQualityTexturesForMaterial(string materialName)
     {
         string lowQualityBundleUrl = string.Concat(url, $"{materialName.Replace(' ', '_')}.lowquality");
-        Debug.Log("LoadAndCacheLowQualityTexturesForMaterial");
-        Debug.Log("lowQualityTexturesBundleInLoading : " + lowQualityTexturesBundleInLoading.Count);
         lowQualityTexturesBundleInLoading.Add(lowQualityBundleUrl);
         try
         {
-            Debug.Log("LoadBundle : " + lowQualityTexturesBundleInLoading.Count);
+            Debug.Log("Added new bundle : " + lowQualityBundleUrl);
+            Debug.Log("Count : " + lowQualityTexturesBundleInLoading.Count);
             await LoadBundle(lowQualityBundleUrl);
             if (loadedBundles.ContainsKey(lowQualityBundleUrl))
             {
@@ -235,9 +235,9 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
             }
             Material mat = loadedMaterials[materialName];
             AssignTextureVariant(mat, lowQualityTextures, "lowquality");
-            Debug.Log("Remove : " + lowQualityTexturesBundleInLoading.Count);
             lowQualityTexturesBundleInLoading.Remove(lowQualityBundleUrl);
-            Debug.Log("Removed : " + lowQualityTexturesBundleInLoading.Count);
+            Debug.Log("Removed " + lowQualityBundleUrl);
+            Debug.Log("Count : " + lowQualityTexturesBundleInLoading.Count);
         }
         catch (UnityWebRequestException exception)
         {
@@ -252,9 +252,14 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
 
     private async UniTask ProcessLowQualityMaterialsInWaiting()
     {
+        while(lowQualityTexturesBundleInLoading.Count != 0)
+        {
+            await UniTask.NextFrame();
+        }
+        Debug.Log("ProcessLowQualityMaterialsInWaiting");
         // Wait for all low quality bundles loading to be added to the lowQualityTexturesBundleInLoading list
         await UniTask.Delay(100);
-        if(lowQualityTexturesBundleInLoading.Count != 0 || !canLoadHighQualityTextures) { return; }
+        //if(lowQualityTexturesBundleInLoading.Count != 0 || !canLoadHighQualityTextures) { return; }
 
         for(int i = materialsInWaiting.Count - 1; i >= 0; i--)
         {
@@ -278,6 +283,7 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
 
     private async UniTask StartHighQualityTextureLoading()
     {
+        Debug.Log("StartHighQualityTextureLoading");
         canLoadHighQualityTextures = false;
         //Debug.Log("Loading high quality textures");
         // Load textures for the loaded materials
@@ -290,7 +296,7 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
             }
             LoadAndCacheHighTexturesForMaterial(materialName).Forget();
         }
-        await ProcessHighQualityMaterialsInWaiting();
+        ProcessHighQualityMaterialsInWaiting().Forget();
         //RefreshMaterials().Forget();
     }
 
@@ -324,9 +330,14 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
 
     private async UniTask ProcessHighQualityMaterialsInWaiting()
     {
+        while (highQualityTexturesBundleInLoading.Count != 0)
+        {
+            await UniTask.NextFrame();
+        }
+        Debug.Log("StartHighQualityTextureLoading");
         // Wait for all low quality bundles loading to be added to the lowQualityTexturesBundleInLoading list
         await UniTask.Delay(100);
-        if (highQualityTexturesBundleInLoading.Count != 0) { return; }
+        //if (highQualityTexturesBundleInLoading.Count != 0) { return; }
 
         for (int i = materialsInWaiting.Count - 1; i >= 0; i--)
         {
