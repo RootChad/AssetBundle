@@ -7,10 +7,9 @@ using System.Collections.Generic;
 
 public class FlexibleAssetBundleAssigner : MonoBehaviour
 {
-    private const string highQualityFolderPath = "Assets/Textures/HighQuality/";
+    private static Dictionary<Texture, (string, string)> bundledTextures = new Dictionary<Texture, (string, string)>();
+    private static List<Material> bundledMaterials = new List<Material>();
     private const string lowQualityFolderPath = "Assets/Textures/LowQuality/";
-
-    private List<string> bundledMaterialNames;
 
     [MenuItem("Kainoo/Tools/Assign Selected Scenes to Asset Bundle")]
     public static void AssignSelectedScenesToBundle()
@@ -19,8 +18,10 @@ public class FlexibleAssetBundleAssigner : MonoBehaviour
         string objectBundleName = "objectbundle";
         string materialsBundleName = "materialsbundle";
 
-        // Ensure the high and low quality folders exist
-        EnsureFolderExists(highQualityFolderPath);
+        bundledTextures.Clear();
+        bundledMaterials.Clear();
+
+        // Ensure the low quality folder exists
         EnsureFolderExists(lowQualityFolderPath);
 
         // Get selected scenes in the Project window
@@ -77,7 +78,6 @@ public class FlexibleAssetBundleAssigner : MonoBehaviour
                 if (prefabAsset != null)
                 {
                     string prefabPath = AssetDatabase.GetAssetPath(prefabAsset);
-                    Debug.Log($"Prefab asset: {prefabAsset.name}, path: {prefabPath}");
                     if (!string.IsNullOrEmpty(prefabPath))
                     {
                         Debug.Log($"Assigning prefab {prefabPath} to bundle {objectBundleName}");
@@ -107,11 +107,26 @@ public class FlexibleAssetBundleAssigner : MonoBehaviour
                     if (material != null)
                     {
                         string materialPath = AssetDatabase.GetAssetPath(material);
+                        bool duplicateMaterialName = false;
+                        foreach(var mat in bundledMaterials)
+                        {
+                            if (mat.name.Equals(material.name))
+                            {
+                                duplicateMaterialName = true;
+                            }
+                        }
+                        if (!bundledMaterials.Contains(material) && duplicateMaterialName)
+                        {
+                            AssetDatabase.RenameAsset(materialPath, material.name + "_01");
+                            AssetDatabase.Refresh();
+                            materialPath = AssetDatabase.GetAssetPath(material);
+                        }
                         if (!string.IsNullOrEmpty(materialPath) && !materialPath.StartsWith("Resources/unity_builtin_extra"))
                         {
                             Debug.Log($"Assigning material {materialPath} to bundle {materialsBundleName}");
                             AssignMaterialToBundle(materialPath, materialsBundleName);
                             AssignTexturesToVariant(material);
+                            bundledMaterials.Add(material);
                         }
                     }
                 }
@@ -170,38 +185,92 @@ public class FlexibleAssetBundleAssigner : MonoBehaviour
                 Texture texture = material.GetTexture(texturePropertyName);
                 if (texture != null)
                 {
-                    string texturePath = AssetDatabase.GetAssetPath(texture);
-                    if (!string.IsNullOrEmpty(texturePath))
+                    if (bundledTextures.ContainsKey(texture))
                     {
-                        // Make the texture readable
-                        MakeTextureReadable(texturePath);
-
-                        // Move high quality texture to high quality folder
-                        string highQualityPath = highQualityFolderPath + Path.GetFileName(texturePath);
-                        AssetDatabase.MoveAsset(texturePath, highQualityPath);
-                        Debug.Log($"Moved high quality texture to {highQualityPath}");
-
-                        // Generate low quality texture
-                        Texture2D highQualityTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(highQualityPath);
-                        Texture2D lowQualityTexture = GenerateLowQualityTexture(highQualityTexture);
-                        if (lowQualityTexture != null)
+                        string materialName = material.name.Replace(" ", "_").ToLower();
+                        Texture highQualityTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(bundledTextures[texture].Item1);
+                        material.SetTexture(texturePropertyName, highQualityTexture);
+                    }
+                    else
+                    {
+                        string texturePath = AssetDatabase.GetAssetPath(texture);
+                        if (!string.IsNullOrEmpty(texturePath))
                         {
-                            string lowQualityPath = lowQualityFolderPath + lowQualityTexture.name + ".png";
-                            File.WriteAllBytes(lowQualityPath, lowQualityTexture.EncodeToPNG());
-                            AssetDatabase.ImportAsset(lowQualityPath);
-                            Debug.Log($"Generated low quality texture at {lowQualityPath}");
+                            // Ensure the texture is readable
+                            MakeTextureReadable(texturePath);
 
-                            // Assign high and low quality textures to variants
+                            string materialDirectory = Path.GetDirectoryName(AssetDatabase.GetAssetPath(material));
+                            //string texturesFolderPath = Path.Combine(materialDirectory, "Textures");
+                            //if (!Directory.Exists(texturesFolderPath))
+                            //{
+                            //    Directory.CreateDirectory(texturesFolderPath);
+                            //    AssetDatabase.Refresh();
+                            //}
+                            //string highQualityFolderPath = Path.Combine(texturesFolderPath, "High_Quality");
+                            //if (!Directory.Exists(highQualityFolderPath))
+                            //{
+                            //    Directory.CreateDirectory(highQualityFolderPath);
+                            //    AssetDatabase.Refresh();
+                            //}
+
+                            Texture2D highQualityTexture = null;
+                            string lowQualityPath = null;
+
+                            // Check if the image is PNG or needs conversion
+                            if (Path.GetExtension(texturePath).ToLower() != ".png")
+                            {
+                                // Generate high quality texture
+                                Texture2D texture2D = AssetDatabase.LoadAssetAtPath<Texture2D>(texturePath);
+                                highQualityTexture = GenerateHighQualityTexture(texture2D);
+                                if (highQualityTexture != null)
+                                {
+                                    texturePath = Path.ChangeExtension(texturePath, "png");
+                                    File.WriteAllBytes(texturePath, highQualityTexture.EncodeToPNG());
+                                    AssetDatabase.ImportAsset(texturePath);
+                                    Debug.Log($"Generated high quality texture at {texturePath}");
+                                }
+                            }
+
+                            // Assign high and high quality textures to variants
+                            highQualityTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(texturePath);
                             string materialName = material.name.Replace(" ", "_").ToLower();
-                            AssignTextureToBundle(highQualityPath, $"{materialName}", "HighQuality");
-                           // AssignTextureToBundle(highQualityPath, $"{materialName}_highquality", "HighQuality");
-                           // AssignTextureToBundle(lowQualityPath, $"{materialName}_lowquality", "LowQuality");
-                            AssignTextureToBundle(lowQualityPath, $"{materialName}", "LowQuality");
+                            AssignTextureToBundle(texturePath, $"{materialName}", "HighQuality");
+                            material.SetTexture(texturePropertyName, highQualityTexture);
+
+                            // Generate low quality texture
+                            Texture2D lowQualityTexture = GenerateLowQualityTexture(highQualityTexture);
+                            if (lowQualityTexture != null)
+                            {
+                                lowQualityPath = Path.Combine(lowQualityFolderPath, lowQualityTexture.name + ".png");
+                                File.WriteAllBytes(lowQualityPath, lowQualityTexture.EncodeToPNG());
+                                AssetDatabase.ImportAsset(lowQualityPath);
+                                Debug.Log($"Generated low quality texture at {lowQualityPath}");
+
+                                // Assign high and low quality textures to variants
+                                materialName = material.name.Replace(" ", "_").ToLower();
+                                AssignTextureToBundle(lowQualityPath, $"{materialName}", "LowQuality");
+                            }
+
+                            bundledTextures.Add(texture, (texturePath, lowQualityPath));
                         }
                     }
                 }
             }
         }
+    }
+
+    private static string ConvertToPng(Texture2D texture, string texturePath)
+    {
+        byte[] textureBytes = File.ReadAllBytes(texturePath);
+        Texture2D newTexture = new Texture2D(texture.width, texture.height);
+        newTexture.LoadImage(textureBytes);
+
+        string pngPath = Path.ChangeExtension(texturePath, ".png");
+        byte[] pngBytes = newTexture.EncodeToPNG();
+        File.WriteAllBytes(pngPath, pngBytes);
+        AssetDatabase.ImportAsset(pngPath);
+
+        return pngPath;
     }
 
     private static void MakeTextureReadable(string texturePath)
@@ -219,6 +288,38 @@ public class FlexibleAssetBundleAssigner : MonoBehaviour
         }
     }
 
+    private static Texture2D GenerateHighQualityTexture(Texture2D highQualityTexture)
+    {
+        if (highQualityTexture == null)
+        {
+            Debug.LogError("High quality texture is null.");
+            return null;
+        }
+
+        // Adjust dimensions to be multiples of 4
+        int width = highQualityTexture.width;
+        int height = highQualityTexture.height;
+
+        // Create a temporary RenderTexture
+        RenderTexture rt = RenderTexture.GetTemporary(width, height, 0, RenderTextureFormat.Default, RenderTextureReadWrite.Linear);
+
+        // Copy the high-quality texture to the RenderTexture
+        Graphics.Blit(highQualityTexture, rt);
+
+        // Create a new Texture2D with the correct format
+        RenderTexture.active = rt;
+        Texture2D newTexture = new Texture2D(width, height, TextureFormat.RGBA32, false);
+        newTexture.name = highQualityTexture.name;
+        newTexture.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+        newTexture.Apply();
+
+        // Release the temporary RenderTexture
+        RenderTexture.ReleaseTemporary(rt);
+        RenderTexture.active = null;
+
+        return newTexture;
+    }
+
     private static Texture2D GenerateLowQualityTexture(Texture2D highQualityTexture)
     {
         if (highQualityTexture == null)
@@ -228,8 +329,8 @@ public class FlexibleAssetBundleAssigner : MonoBehaviour
         }
 
         // Adjust dimensions to be multiples of 4
-        int width = (highQualityTexture.width / 2) / 4 * 4;
-        int height = (highQualityTexture.height / 2) / 4 * 4;
+        int width = (highQualityTexture.width / 6) / 4 * 4;
+        int height = (highQualityTexture.height / 6) / 4 * 4;
 
         // Create a temporary RenderTexture
         RenderTexture rt = RenderTexture.GetTemporary(width, height, 0, RenderTextureFormat.Default, RenderTextureReadWrite.Linear);
@@ -250,53 +351,18 @@ public class FlexibleAssetBundleAssigner : MonoBehaviour
 
         return lowQualityTexture;
     }
-    private static Texture2D GenerateHighQualityTexture(Texture2D sourceTexture)
-    {
-        if (sourceTexture == null)
-        {
-            Debug.LogError("Source texture is null.");
-            return null;
-        }
 
-        // Set desired high quality dimensions
-        int highQualityWidth = sourceTexture.width * 2;  // For example, doubling the resolution
-        int highQualityHeight = sourceTexture.height * 2;
-
-        // Create a new high-quality texture with the desired dimensions
-        Texture2D highQualityTexture = new Texture2D(highQualityWidth, highQualityHeight, sourceTexture.format, false);
-
-        // Copy the source texture to the high-quality texture using bilinear filtering
-        for (int y = 0; y < highQualityHeight; y++)
-        {
-            for (int x = 0; x < highQualityWidth; x++)
-            {
-                // Calculate the corresponding pixel in the source texture
-                float u = (float)x / (highQualityWidth - 1);
-                float v = (float)y / (highQualityHeight - 1);
-                Color color = sourceTexture.GetPixelBilinear(u, v);
-
-                // Set the pixel color in the high-quality texture
-                highQualityTexture.SetPixel(x, y, color);
-            }
-        }
-
-        // Apply changes to the high-quality texture
-        highQualityTexture.Apply();
-
-        // Optionally, save the high-quality texture to a file
-        string highQualityPath = highQualityFolderPath + sourceTexture.name + "_high.png";
-        File.WriteAllBytes(highQualityPath, highQualityTexture.EncodeToPNG());
-        AssetDatabase.ImportAsset(highQualityPath);
-        Debug.Log($"Generated high quality texture at {highQualityPath}");
-
-        return highQualityTexture;
-    }
     private static void AssignTextureToBundle(string texturePath, string bundleName, string variant)
     {
         AssetImporter importer = AssetImporter.GetAtPath(texturePath);
         if (importer != null)
         {
             Debug.Log($"Assigning texture at path {texturePath} to bundle {bundleName} with variant {variant}");
+            if (!string.IsNullOrEmpty(importer.assetBundleName) && !string.IsNullOrEmpty(importer.assetBundleVariant))
+            {
+                Debug.Log($"Texture is already assigned to a bundle with variant");
+                return;
+            }
             importer.SetAssetBundleNameAndVariant(bundleName, variant);
         }
         else

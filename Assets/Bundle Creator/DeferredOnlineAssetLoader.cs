@@ -1,15 +1,10 @@
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using System.Collections.Generic;
 using System.IO;
 using System;
 using UnityEngine.Networking;
-using System.Collections;
-using Unity.Mathematics;
-using Unity.VisualScripting;
-using static UnityEngine.Rendering.DebugUI;
 
 public class DeferredOnlineAssetLoader : MonoBehaviour
 {
@@ -54,7 +49,7 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         }
         catch(Exception ex)
         {
-            Debug.Log(ex);
+            Debug.LogError(ex);
         }
 
         try
@@ -64,7 +59,7 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         }
         catch(Exception ex)
         {
-            Debug.Log(ex);
+            Debug.LogError(ex);
         }
 
         try
@@ -74,7 +69,7 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         }
         catch(Exception ex)
         {
-            Debug.Log(ex);
+            Debug.LogError(ex);
         }
 
         try
@@ -84,7 +79,7 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         }
         catch(Exception ex)
         {
-            Debug.Log(ex);
+            Debug.LogError(ex);
         }
 
         // Load materials inside bundles and put them inside loadedMaterials list
@@ -97,17 +92,14 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
 
     private async UniTask LoadAndCacheLowQualityTextures()
     {
-        Debug.Log("LoadAndCacheLowQualityTextures");
         // Load textures for each loaded material
         foreach (var materialName in loadedMaterials.Keys)
         {
             await UniTask.WaitForSeconds(.1f);
             while(lowQualityTexturesBundleInLoading.Count >= 8)
             {
-                Debug.Log("Waiting : " + lowQualityTexturesBundleInLoading.Count);
                 await UniTask.NextFrame();
             }
-            Debug.Log("Current Count : " + lowQualityTexturesBundleInLoading.Count);
             LoadAndCacheLowQualityTexturesForMaterial(materialName).Forget();
         }
     }
@@ -121,18 +113,15 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         }
 
         UnityWebRequest uwr = UnityWebRequestAssetBundle.GetAssetBundle(bundleUrl);
-        Debug.Log($"Sending web request to : {bundleUrl}");
         try
         {
             await uwr.SendWebRequest();
             if (uwr.isDone && uwr.result == UnityWebRequest.Result.Success)
             {
-                //Debug.Log($"Attempting to load bundle: {bundleUrl}");
                 AssetBundle bundle = DownloadHandlerAssetBundle.GetContent(uwr);
                 if (bundle != null)
                 {
                     loadedBundles[bundleUrl] = bundle;
-                    //Debug.Log($"Loaded Bundle: {bundleUrl}");
                 }
                 else
                 {
@@ -162,36 +151,10 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
                 {
                     var loadSceneAsync = SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Additive);
                     await loadSceneAsync;
-                    //Debug.Log($"Scene Loaded Additively: {sceneName}");
                     return;
                 }
             }
             Debug.LogError($"Scene {sceneName} not found in bundle {bundleUrl}");
-        }
-        else
-        {
-            Debug.LogError($"Bundle not found in loaded bundles: {bundleUrl}");
-        }
-    }
-
-    private async UniTask LoadRenderersFromObjectBundle(string bundleUrl)
-    {
-        if (loadedBundles.TryGetValue(bundleUrl, out var bundle))
-        {
-            foreach (var assetName in bundle.GetAllAssetNames())
-            {
-                var asset = bundle.LoadAsset<GameObject>(assetName);
-                if (asset != null)
-                {
-                    var renderers = asset.GetComponentsInChildren<Renderer>(true); // Get renderers without instantiating the objects
-                    objectRenderers.AddRange(renderers);
-                    //Debug.Log($"Loaded Renderers from Object: {assetName}");
-                }
-                else
-                {
-                    Debug.LogError($"Failed to load Object: {assetName}");
-                }
-            }
         }
         else
         {
@@ -209,7 +172,6 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
                 if (material != null)
                 {
                     loadedMaterials[Path.GetFileNameWithoutExtension(assetName)] = material;
-                    //Debug.Log($"Loaded Material: {assetName}");
                 }
             }
         }
@@ -225,8 +187,6 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         lowQualityTexturesBundleInLoading.Add(lowQualityBundleUrl);
         try
         {
-            Debug.Log("Added new bundle : " + lowQualityBundleUrl);
-            Debug.Log("Count : " + lowQualityTexturesBundleInLoading.Count);
             await LoadBundle(lowQualityBundleUrl);
             if (loadedBundles.ContainsKey(lowQualityBundleUrl))
             {
@@ -236,8 +196,6 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
             Material mat = loadedMaterials[materialName];
             AssignTextureVariant(mat, lowQualityTextures, "lowquality");
             lowQualityTexturesBundleInLoading.Remove(lowQualityBundleUrl);
-            Debug.Log("Removed " + lowQualityBundleUrl);
-            Debug.Log("Count : " + lowQualityTexturesBundleInLoading.Count);
         }
         catch (UnityWebRequestException exception)
         {
@@ -256,7 +214,6 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         {
             await UniTask.NextFrame();
         }
-        Debug.Log("ProcessLowQualityMaterialsInWaiting");
         // Wait for all low quality bundles loading to be added to the lowQualityTexturesBundleInLoading list
         await UniTask.Delay(100);
         //if(lowQualityTexturesBundleInLoading.Count != 0 || !canLoadHighQualityTextures) { return; }
@@ -283,9 +240,6 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
 
     private async UniTask StartHighQualityTextureLoading()
     {
-        Debug.Log("StartHighQualityTextureLoading");
-        canLoadHighQualityTextures = false;
-        //Debug.Log("Loading high quality textures");
         // Load textures for the loaded materials
         foreach (var materialName in loadedMaterials.Keys)
         {
@@ -297,7 +251,6 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
             LoadAndCacheHighTexturesForMaterial(materialName).Forget();
         }
         ProcessHighQualityMaterialsInWaiting().Forget();
-        //RefreshMaterials().Forget();
     }
 
     private async UniTask LoadAndCacheHighTexturesForMaterial(string materialName)
@@ -334,10 +287,8 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         {
             await UniTask.NextFrame();
         }
-        Debug.Log("StartHighQualityTextureLoading");
         // Wait for all low quality bundles loading to be added to the lowQualityTexturesBundleInLoading list
         await UniTask.Delay(100);
-        //if (highQualityTexturesBundleInLoading.Count != 0) { return; }
 
         for (int i = materialsInWaiting.Count - 1; i >= 0; i--)
         {
@@ -356,7 +307,6 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
                 if (texture != null)
                 {
                     string textureKey = Path.GetFileNameWithoutExtension(assetName);
-                    //Debug.Log($"Adding {variantKeyword} Texture: {textureKey}");
                     textureDictionary[textureKey] = texture;
                 }
             }
@@ -373,7 +323,6 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
         {
             bundle.Unload(false);
             loadedBundles.Remove(bundleUrl);
-            //Debug.Log($"Unloaded Bundle: {bundleUrl}");
         }
     }
 
@@ -425,7 +374,6 @@ public class DeferredOnlineAssetLoader : MonoBehaviour
                 if (textureVariants.TryGetValue(textureName, out Texture variantTexture))
                 {
                     mat.SetTexture(texturePropertyName, variantTexture);
-                    //Debug.Log($"Assigned {variantKeyword} texture {variantTexture.name} to material {mat.name}");
                 }
                 else
                 {
